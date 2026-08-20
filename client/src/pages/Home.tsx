@@ -271,7 +271,7 @@ export default function Home() {
           </div>
         </div>
         <div className="mx-auto flex max-w-[1240px] flex-col justify-between gap-3 pt-6 text-[0.67rem] uppercase tracking-[0.12em] text-[#a9907e] md:flex-row">
-          <span>© 2026 The Cannabis Shop · Sevilla</span><span>Privacidad y aviso legal · enlaces por añadir</span>
+          <span>© 2026 Shops Baleares S.L.</span><a href="/cookies">Política de cookies</a>
         </div>
       </footer>
     </div>

@@ -49,3 +49,11 @@ La documentación de Google sobre `LocalBusiness` indica que cada local puede de
 **Aplicación editorial:** Se preparará un bloque JSON-LD con `LocalBusiness` exclusivamente cuando se proporcionen y verifiquen el nombre legal o comercial real, dirección, teléfono, horarios y URL. No se usarán `aggregateRating` ni `review` sin datos reales recogidos de forma legítima, y no se declarará una categoría que pueda inducir a error.
 
 Fuente: https://developers.google.com/search/docs/appearance/structured-data/local-business?hl=es
+
+## 7. Política de cookies y preferencias
+
+La guía oficial de la Agencia Española de Protección de Datos sobre el uso de cookies, consultada en su edición de mayo de 2024, constituye la referencia para el texto de esta página. La implementación distinguirá cookies técnicas de aquellas analíticas o de terceros que puedan requerir una elección previa, e incluirá una opción clara para consultar o modificar preferencias.
+
+**Aplicación editorial:** La página no afirmará que existan cookies concretas que todavía no se hayan confirmado. El texto identificará las cookies técnicas de funcionamiento y señalará que las analíticas/terceros solo se activarán, si se usan, conforme a la configuración elegida. La política deberá revisarse cuando se añadan servicios de medición, mapas incrustados, vídeo u otros proveedores.
+
+Fuente: https://www.aepd.es/guias/guia-cookies.pdf

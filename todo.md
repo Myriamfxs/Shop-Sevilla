@@ -1,5 +1,8 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Crear la página de política de cookies y enlazarla desde el pie de la landing.
+- [x] Incluir una gestión visible de preferencias de cookies en la nueva página.
+- [x] Incorporar los datos de Shops Baleares S.L. como responsable de la web en la política de cookies.
 - [x] Subir el logotipo oficial de The Cannabis Shop by Hemp Brothers y usarlo como recurso principal de marca.
 - [x] Sustituir el monograma textual de cabecera y pie por el logotipo oficial, y actualizar el favicon.
 - [x] Retirar Ropa & lifestyle y Productos de alimentación de todas las listas y muestrarios de categorías.
