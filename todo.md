@@ -1,5 +1,8 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Reorientar la identidad visual hacia madera, verde ácido, luz cálida y códigos urbanos inspirados en el interior real.
+- [x] Incorporar la fotografía interior aportada como prueba visual de la experiencia de tienda.
+- [x] Ajustar hero, categorías y servicios para que la landing se perciba más viva, directa y menos corporativa.
 - [x] Crear la página de Política de Privacidad con los datos confirmados de Shops Baleares S.L.
 - [x] Crear la página de Aviso Legal con los datos confirmados de Shops Baleares S.L.
 - [x] Enlazar Política de Privacidad y Aviso Legal desde los pies de página y las páginas legales existentes.

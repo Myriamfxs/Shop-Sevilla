@@ -101,3 +101,10 @@ La voz se simplifica a “Explora la selección”, “Conoce nuestras categorí
 - La cabecera muestra un **mostrador de categorías** con objetos neutrales y formas variadas; el vegetal, si aparece, será una textura secundaria y nunca el eje de marca.
 - Cada titular y llamada a la acción nombra de forma explícita la **selección**, las **categorías**, la **consulta presencial**, la **disponibilidad en tienda** o la **tienda física en Sevilla**.
 - El oro de rótulo se reserva para titulares, CTA y puntos de orientación. Los fondos de lectura serán caoba, marfil y verde estructural, sin bandas promocionales doradas de gran formato.
+
+### Ajustes de vitrina urbana
+
+- La fotografía interior es contexto de tienda real; el mural vegetal queda subordinado a la composición de **vitrina, selección y consulta presencial**.
+- El verde se limita a orientación de categoría, separadores y pequeños detalles de iluminación. La estructura dominante es **caoba, marfil y oro de rótulo**.
+- Las categorías muestran siluetas neutrales de objetos, estuches y envases sin marca junto con superficies de mostrador, para que la cuadrícula se lea como un muestrario tangible y no como un conjunto de bloques planos.
+- El logotipo oficial se acompaña de un lockup tipográfico de **The Cannabis Shop · Sevilla** para que la hoja no sea la única señal de marca.
