@@ -1,5 +1,7 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Sustituir los mensajes de compra y disponibilidad por un bloque de catálogo en preparación.
+- [x] Añadir únicamente datos de formato, aroma, categoría o uso visible que estén confirmados en el material aportado.
 - [x] Clasificar las afirmaciones proporcionadas en información apta, pendiente de validar o no apta para la web.
 - [x] Incorporar las fotografías reales de aceites y cosmética como visuales de producto.
 - [x] Añadir contenido comercial verificable para aceites, cosmética y accesorios de sabor sin alegaciones terapéuticas no verificadas.

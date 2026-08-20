@@ -111,32 +111,32 @@ export default function Home() {
           <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
             <div className="self-start lg:sticky lg:top-12">
               <SectionLabel>Aceites y cosmética</SectionLabel>
-              <h2 id="oils-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3.1rem,5.4vw,6.1rem)] leading-[.86] tracking-[-.07em]">Selección real, desde la vitrina.</h2>
-              <p className="mt-7 max-w-[430px] text-[1.03rem] leading-7 text-[#624c45]">Explora aceites de la selección, aceites de masaje y referencias de cuidado para piel, cabello y uñas. Consulta en tienda las presentaciones y la disponibilidad actual.</p>
-              <a className="inline-category-link mt-9" href="#consulta">Consultar disponibilidad de aceites <ArrowUpRight size={17} /></a>
+              <h2 id="oils-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3.1rem,5.4vw,6.1rem)] leading-[.86] tracking-[-.07em]">La vitrina adelanta lo que viene.</h2>
+              <p className="mt-7 max-w-[430px] text-[1.03rem] leading-7 text-[#624c45]">Estamos preparando las fichas de aceites y cosmética. De momento, estas fotografías muestran parte de la selección real de la tienda y los formatos que iremos documentando.</p>
+              <a className="inline-category-link mt-9" href="#consulta">Preguntar por una referencia <ArrowUpRight size={17} /></a>
             </div>
             <div className="product-visual-grid">
-              <figure className="product-real-photo product-real-photo-primary"><img src={assets.cbdOils} alt="Selección de aceites de CBD en distintos envases de colores" /><figcaption>Aceites de la selección de tienda</figcaption></figure>
-              <figure className="product-real-photo product-real-photo-secondary"><img src={assets.cosmeticsOils} alt="Aceites de masaje y cuidado personal en una vitrina" /><figcaption>Masaje y cuidado personal</figcaption></figure>
+              <figure className="product-real-photo product-real-photo-primary"><img src={assets.cbdOils} alt="Selección de aceites de CBD en distintos envases de colores" /><figcaption>Fichas de aceites en preparación</figcaption></figure>
+              <figure className="product-real-photo product-real-photo-secondary"><img src={assets.cosmeticsOils} alt="Aceites de masaje y cuidado personal en una vitrina" /><figcaption>Cosmética en preparación</figcaption></figure>
             </div>
           </div>
           <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#d8c3aa] md:grid-cols-3">
-            <article className="product-info-card"><span>01</span><h3 className="display-heading">Aceites de la selección</h3><p>Consulta las referencias etiquetadas y las presentaciones disponibles en la vitrina.</p></article>
-            <article className="product-info-card"><span>02</span><h3 className="display-heading">Masaje y cuidado</h3><p>Aceites de masaje y productos de cuidado para explorar dentro de la categoría cosmética.</p></article>
-            <article className="product-info-card"><span>03</span><h3 className="display-heading">Piel, cabello y uñas</h3><p>Referencias de cuidado personal cuya presentación y uso se confirman directamente en tienda.</p></article>
+            <article className="product-info-card"><span>01</span><h3 className="display-heading">Aceites</h3><p>Próximamente: fichas con marca, formato y la información que figure en cada envase.</p></article>
+            <article className="product-info-card"><span>02</span><h3 className="display-heading">Masaje y cuidado</h3><p>Próximamente: referencias de cosmética y cuidado personal documentadas por categoría.</p></article>
+            <article className="product-info-card"><span>03</span><h3 className="display-heading">Aromas y formatos</h3><p>Próximamente: presentaciones de la selección, siempre a partir del etiquetado confirmado.</p></article>
           </div>
         </section>
 
         <section id="servicios" className="relative overflow-hidden bg-[#2f1c18] px-5 py-20 text-[#f1e8da] lg:px-10 lg:py-28" aria-labelledby="services-heading">
           <div className="service-ghost" aria-hidden="true">PASA</div>
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-            <div><SectionLabel inverse>Compra en tienda</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Tus productos. Nuestra selección.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">Reunimos categorías, accesorios y novedades para que encuentres los productos que buscas. Consulta las referencias disponibles y compra directamente en el local.</p></div>
+            <div><SectionLabel inverse>Catálogo en preparación</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Estamos preparando las fichas.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">El catálogo detallado está en preparación. Estamos reuniendo fotografías, formatos y descripciones de cada categoría antes de mostrarlas en la web.</p></div>
             <div className="service-showcase">
-              <figure className="interior-store-photo"><img src={assets.interior} alt="Vitrinas y mural del interior de The Cannabis Shop" /><figcaption>Productos, vitrinas y selección en tienda.</figcaption></figure>
+              <figure className="interior-store-photo"><img src={assets.interior} alt="Vitrinas y mural del interior de The Cannabis Shop" /><figcaption>Catálogo en preparación · tienda física</figcaption></figure>
               <div className="service-grid">
-                <article><Search size={23} strokeWidth={1.65} /><span>01</span><h3 className="display-heading">Encuentra tu categoría</h3><p>Localiza la familia de producto o accesorio que quieres comprar dentro de la tienda.</p></article>
-                <article><PackageOpen size={23} strokeWidth={1.65} /><span>02</span><h3 className="display-heading">Revisa la selección</h3><p>Consulta las referencias y la disponibilidad actual de la selección del establecimiento.</p></article>
-                <article><Store size={23} strokeWidth={1.65} /><span>03</span><h3 className="display-heading">Compra en tienda</h3><p>Compra los productos disponibles directamente en The Cannabis Shop · Sevilla.</p></article>
+                <article><Search size={23} strokeWidth={1.65} /><span>01</span><h3 className="display-heading">Categorías definidas</h3><p>Estamos organizando cada familia de producto para mostrarla con claridad en el catálogo.</p></article>
+                <article><PackageOpen size={23} strokeWidth={1.65} /><span>02</span><h3 className="display-heading">Fichas en revisión</h3><p>Las referencias, formatos y fotografías se incorporarán cuando estén confirmados.</p></article>
+                <article><Store size={23} strokeWidth={1.65} /><span>03</span><h3 className="display-heading">Próximamente</h3><p>El catálogo completo estará disponible en esta sección cuando terminemos de documentar la selección.</p></article>
               </div>
             </div>
           </div>
