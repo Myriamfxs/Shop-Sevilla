@@ -102,6 +102,13 @@
 @keyframes counter-float { from { transform: translateY(0) rotate(-.5deg); } to { transform: translateY(-7px) rotate(.7deg); } }
 @keyframes object-bob { from { transform: translateY(0); } to { transform: translateY(-5px); } }
 
+@media (prefers-reduced-motion: no-preference) {
+  .product-hero::after { content: ""; position: absolute; z-index: 0; top: -30%; left: -55%; width: 28%; height: 165%; pointer-events: none; opacity: .32; background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.06) 28%, rgba(255,222,146,.42) 50%, rgba(255,255,255,.07) 70%, transparent 100%); transform: rotate(16deg); animation: glass-sweep 8.5s cubic-bezier(.45,.05,.55,.95) infinite; mix-blend-mode: screen; }
+  .product-real-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; background: linear-gradient(118deg, transparent 30%, rgba(255,255,255,.42) 49%, transparent 68%); transform: translateX(-115%); transition: transform 680ms cubic-bezier(.23,1,.32,1), opacity 260ms cubic-bezier(.23,1,.32,1); }.product-real-photo:hover::after { opacity: .58; transform: translateX(115%); }
+}
+
+@keyframes glass-sweep { 0%,18% { transform: translateX(0) rotate(16deg); opacity: 0; } 28% { opacity: .32; } 55% { transform: translateX(720%) rotate(16deg); opacity: 0; } 100% { transform: translateX(720%) rotate(16deg); opacity: 0; } }
+
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
 
 /* Consulta de disponibilidad: formulario comercial preparado para continuar la conversación en WhatsApp. */

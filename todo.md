@@ -1,5 +1,8 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Añadir un efecto de reflejo de vitrina al hero y a los visuales principales.
+- [x] Generar el paquete de producción estático con redirecciones compatibles con Hostinger.
+- [x] Documentar la subida del paquete y la configuración de rutas en Hostinger.
 - [x] Añadir animaciones de entrada para los bloques principales y las fotografías de producto.
 - [x] Añadir microinteracciones a tarjetas, botones y formulario respetando la reducción de movimiento.
 - [x] Excluir las alegaciones de dolor, ansiedad, sueño, antioxidante y anticonvulsivo de los aceites.

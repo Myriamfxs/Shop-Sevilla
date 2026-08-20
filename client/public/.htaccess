@@ -1,0 +1,9 @@
+Options -MultiViews
+RewriteEngine On
+
+# Permite que las rutas de React se resuelvan también al abrirlas directamente.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^ index.html [L]
