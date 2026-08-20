@@ -22,12 +22,12 @@ const assets = {
 };
 
 const categories = [
-  { id: "01", title: "Cosmética", tag: "En vitrina", object: "bottle", text: "Una categoría para descubrir fórmulas, texturas y selección disponible en tienda.", tone: "mahogany" },
-  { id: "02", title: "Aceites & extractos", tag: "En vitrina", object: "dropper", text: "Consulta las referencias presentes y su información disponible directamente en el establecimiento.", tone: "gold" },
-  { id: "03", title: "Vaporizadores", tag: "Consulta", object: "device", text: "Encuentra dispositivos y accesorios de la categoría para revisar con atención presencial.", tone: "green" },
-  { id: "04", title: "Accesorios & gadgets", tag: "Pequeños hallazgos", object: "case", text: "Objetos y complementos para configurar una selección que encaje contigo.", tone: "ivory" },
-  { id: "05", title: "Semillas", tag: "En estuche", object: "packet", text: "Una familia de producto para consultar por categorías y disponibilidad en el local.", tone: "ivory" },
-  { id: "06", title: "Selección de tienda", tag: "Muestrario", object: "jar", text: "Novedades, favoritos y categorías que puedes explorar durante tu visita.", tone: "mahogany" },
+  { id: "01", title: "Cosmética", tag: "Productos", object: "bottle", text: "Descubre la cosmética disponible dentro de nuestra selección de tienda.", tone: "mahogany" },
+  { id: "02", title: "Aceites & extractos", tag: "Productos", object: "dropper", text: "Explora las referencias disponibles de esta categoría en el establecimiento.", tone: "gold" },
+  { id: "03", title: "Vaporizadores", tag: "Productos", object: "device", text: "Encuentra dispositivos y complementos de la categoría disponibles en tienda.", tone: "green" },
+  { id: "04", title: "Accesorios & gadgets", tag: "Accesorios", object: "case", text: "Complementos y objetos para completar tu selección de productos.", tone: "ivory" },
+  { id: "05", title: "Semillas", tag: "Productos", object: "packet", text: "Consulta las referencias de semillas presentes en la selección actual.", tone: "ivory" },
+  { id: "06", title: "Selección de tienda", tag: "Novedades", object: "jar", text: "Descubre novedades y productos destacados disponibles en el local.", tone: "mahogany" },
 ];
 
 const faqs = [
@@ -72,18 +72,18 @@ export default function Home() {
           <div className="relative mx-auto grid min-h-[760px] max-w-[1440px] px-5 pb-10 pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:pb-14 lg:pt-36">
             <div className="self-end">
               <SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel>
-              <h1 id="hero-heading" className="product-hero-heading mt-6">Entra. Mira.<em>Pregunta.</em></h1>
-              <p className="mt-7 max-w-[530px] text-[1.05rem] leading-7 text-[#f1e8da] lg:text-[1.15rem]">Vitrinas, luz verde, accesorios y una selección que se entiende mejor en persona. Ven a The Cannabis Shop · Sevilla y consulta lo que estás buscando.</p>
-              <div className="mt-9 flex flex-wrap gap-4"><a className="button-gold" href="#categorias">Ver categorías <ArrowDownRight size={18} /></a><a className="text-link-light" href="#servicios">Conocer la tienda <ArrowUpRight size={16} /></a></div>
+              <h1 id="hero-heading" className="product-hero-heading mt-6">Productos.<br />Accesorios.<em>Selección.</em></h1>
+              <p className="mt-7 max-w-[530px] text-[1.05rem] leading-7 text-[#f1e8da] lg:text-[1.15rem]">Encuentra cosmética, aceites y extractos, vaporizadores, accesorios, semillas y más. Explora la selección disponible y compra tus productos en The Cannabis Shop · Sevilla.</p>
+              <div className="mt-9 flex flex-wrap gap-4"><a className="button-gold" href="#categorias">Ver productos <ArrowDownRight size={18} /></a><a className="text-link-light" href="#servicios">Conocer la selección <ArrowUpRight size={16} /></a></div>
             </div>
-            <aside className="hero-selection-note self-end lg:justify-self-end"><Sparkles size={18} strokeWidth={1.8} /><p>Una tienda física para pasar, mirar con calma y consultar la disponibilidad en persona.</p></aside>
+            <aside className="hero-selection-note self-end lg:justify-self-end"><Sparkles size={18} strokeWidth={1.8} /><p>Categorías de producto para comprar en tienda. Consulta la disponibilidad de cada referencia en el local.</p></aside>
           </div>
         </section>
 
         <section id="seleccion" className="bg-[#f0e8db] px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="selection-heading">
           <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[0.73fr_1.27fr] lg:items-end">
-            <div><SectionLabel>La selección</SectionLabel><h2 id="selection-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3rem,5.4vw,6rem)] leading-[0.87] tracking-[-0.06em]">Aquí hay mucho que mirar.</h2></div>
-            <p className="max-w-[595px] text-[1.05rem] leading-7 text-[#654e47] lg:mb-2 lg:justify-self-end">Como en las vitrinas de la tienda: entra por una categoría, curiosea y pregunta. La selección se consulta siempre en persona.</p>
+            <div><SectionLabel>Nuestros productos</SectionLabel><h2 id="selection-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3rem,5.4vw,6rem)] leading-[0.87] tracking-[-0.06em]">Productos para descubrir.</h2></div>
+            <p className="max-w-[595px] text-[1.05rem] leading-7 text-[#654e47] lg:mb-2 lg:justify-self-end">Explora las categorías que encontrarás en la tienda. Localiza lo que buscas, consulta las referencias disponibles y completa tu compra en el local.</p>
           </div>
           <div id="categorias" className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => <article className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#servicios" aria-label={`Consultar ${category.title} en tienda`}>Consultar en tienda <ArrowUpRight size={16} /></a></div></article>)}
@@ -93,13 +93,13 @@ export default function Home() {
         <section id="servicios" className="relative overflow-hidden bg-[#2f1c18] px-5 py-20 text-[#f1e8da] lg:px-10 lg:py-28" aria-labelledby="services-heading">
           <div className="service-ghost" aria-hidden="true">PASA</div>
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-            <div><SectionLabel inverse>La tienda real</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">No es solo mirar: es pasar y preguntar.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">El ambiente importa. Por eso la atención empieza en la vitrina: encuentra la zona, consulta la categoría y descubre la selección a tu ritmo.</p></div>
+            <div><SectionLabel inverse>Compra en tienda</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Tus productos. Nuestra selección.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">Reunimos categorías, accesorios y novedades para que encuentres los productos que buscas. Consulta las referencias disponibles y compra directamente en el local.</p></div>
             <div className="service-showcase">
-              <figure className="interior-store-photo"><img src={assets.interior} alt="Vitrinas y mural del interior de The Cannabis Shop" /><figcaption>Así se vive la tienda: luz, vitrina y descubrimiento.</figcaption></figure>
+              <figure className="interior-store-photo"><img src={assets.interior} alt="Vitrinas y mural del interior de The Cannabis Shop" /><figcaption>Productos, vitrinas y selección en tienda.</figcaption></figure>
               <div className="service-grid">
-                <article><Search size={23} strokeWidth={1.65} /><span>01</span><h3 className="display-heading">Orientación por categorías</h3><p>Te ayudamos a ubicar la familia de producto o accesorio que quieres consultar al llegar.</p></article>
-                <article><PackageOpen size={23} strokeWidth={1.65} /><span>02</span><h3 className="display-heading">Selección en tienda</h3><p>Consulta referencias y disponibilidad de forma presencial, dentro de la selección del establecimiento.</p></article>
-                <article><Store size={23} strokeWidth={1.65} /><span>03</span><h3 className="display-heading">Atención presencial</h3><p>Un punto de contacto directo para explorar productos, complementos y cultura cannabis en un solo lugar.</p></article>
+                <article><Search size={23} strokeWidth={1.65} /><span>01</span><h3 className="display-heading">Encuentra tu categoría</h3><p>Localiza la familia de producto o accesorio que quieres comprar dentro de la tienda.</p></article>
+                <article><PackageOpen size={23} strokeWidth={1.65} /><span>02</span><h3 className="display-heading">Revisa la selección</h3><p>Consulta las referencias y la disponibilidad actual de la selección del establecimiento.</p></article>
+                <article><Store size={23} strokeWidth={1.65} /><span>03</span><h3 className="display-heading">Compra en tienda</h3><p>Compra los productos disponibles directamente en The Cannabis Shop · Sevilla.</p></article>
               </div>
             </div>
           </div>
@@ -108,20 +108,20 @@ export default function Home() {
         <section className="product-feature px-5 py-20 lg:px-10 lg:py-28">
           <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-20">
             <div className="feature-selection-board" aria-label="Muestrario de categorías de tienda"><div className="feature-board-head"><span>THE CANNABIS SHOP</span><span>SELECCIÓN</span></div><p className="feature-board-title display-heading">Lo ves.<br />Lo preguntas.</p><div className="feature-board-grid"><span>Cosmética</span><span>Aceites & extractos</span><span>Vaporizadores</span><span>Accesorios</span><span>Semillas</span><span>Selección de tienda</span></div><div className="feature-board-foot"><i aria-hidden="true">✦</i><span>Consulta presencial · Sevilla</span></div></div>
-            <div className="self-center"><SectionLabel>THE CANNABIS SHOP</SectionLabel><h2 className="display-heading mt-5 max-w-[510px] text-[clamp(3rem,5.1vw,5.85rem)] leading-[0.88] tracking-[-0.06em]">La tienda tiene su propio ritmo.</h2><p className="mt-7 max-w-[510px] text-[1.05rem] leading-7 text-[#654e47]">Entra, recorre las vitrinas y encuentra la categoría que te interesa. La atención presencial está ahí para ayudarte a llegar a la referencia o al accesorio adecuado.</p><a className="inline-category-link mt-9" href="#categorias">Explorar todas las categorías <ArrowUpRight size={17} /></a></div>
+            <div className="self-center"><SectionLabel>THE CANNABIS SHOP</SectionLabel><h2 className="display-heading mt-5 max-w-[510px] text-[clamp(3rem,5.1vw,5.85rem)] leading-[0.88] tracking-[-0.06em]">Productos para tu selección.</h2><p className="mt-7 max-w-[510px] text-[1.05rem] leading-7 text-[#654e47]">Recorre las categorías y encuentra cosmética, aceites y extractos, vaporizadores, accesorios, semillas y novedades disponibles en tienda.</p><a className="inline-category-link mt-9" href="#categorias">Ver todos los productos <ArrowUpRight size={17} /></a></div>
           </div>
         </section>
 
         <section id="preguntas" className="relative overflow-hidden bg-[#e6ddce] px-5 py-20 text-[#2f1c18] lg:px-10 lg:py-28" aria-labelledby="faq-heading">
           <div className="faq-grid-pattern" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-            <div><SectionLabel>Preguntas frecuentes</SectionLabel><h2 id="faq-heading" className="display-heading mt-5 max-w-[460px] text-[clamp(3rem,5.2vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Pasa por la tienda.</h2><p className="mt-7 max-w-[400px] text-[1rem] leading-7 text-[#513221]">Si tienes una referencia en mente, la mejor forma de comprobarla es venir, verla y consultarla directamente en el local.</p></div>
+            <div><SectionLabel>Preguntas frecuentes</SectionLabel><h2 id="faq-heading" className="display-heading mt-5 max-w-[460px] text-[clamp(3rem,5.2vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Encuentra lo que buscas.</h2><p className="mt-7 max-w-[400px] text-[1rem] leading-7 text-[#513221]">Si buscas un producto concreto, consulta la disponibilidad y las referencias actuales directamente en nuestra tienda.</p></div>
             <div className="lg:pt-5">{faqs.map((item, index) => { const isOpen = openFaq === index; return <div className="faq-item" key={item.question}><button type="button" onClick={() => setOpenFaq(isOpen ? null : index)} aria-expanded={isOpen}><span>{item.question}</span><ChevronDown className={isOpen ? "rotate-180" : ""} size={22} /></button>{isOpen && <p>{item.answer}</p>}</div>; })}</div>
           </div>
         </section>
 
         <section className="closing-product px-5 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">La luz verde está encendida.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Ven a recorrer las categorías, consulta la disponibilidad y descubre el ambiente de The Cannabis Shop en persona.</p><a className="button-gold mt-10" href="#categorias">Ver categorías <ArrowUpRight size={17} /></a></div>
+          <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">Descubre nuestra selección.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías, consulta la disponibilidad y compra tus productos directamente en The Cannabis Shop.</p><a className="button-gold mt-10" href="#categorias">Ver productos <ArrowUpRight size={17} /></a></div>
         </section>
       </main>
 

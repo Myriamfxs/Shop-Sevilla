@@ -1,5 +1,7 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Sustituir el copy de visita y ambiente por mensajes comerciales centrados en categorías y selección de productos.
+- [x] Mantener las categorías reales sin inventar referencias, precios, efectos o fichas no aportadas.
 - [x] Reorientar la identidad visual hacia madera, verde ácido, luz cálida y códigos urbanos inspirados en el interior real.
 - [x] Incorporar la fotografía interior aportada como prueba visual de la experiencia de tienda.
 - [x] Ajustar hero, categorías y servicios para que la landing se perciba más viva, directa y menos corporativa.
