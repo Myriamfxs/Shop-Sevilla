@@ -234,7 +234,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-[#20130f] px-5 pb-8 pt-10 text-[#f1e8da] lg:px-10">
-        <div className="mx-auto grid max-w-[1240px] gap-10 border-b border-[#f1e8da]/20 pb-10 md:grid-cols-[1fr_auto]"><div><StoreMark inverse /><p className="mt-5 max-w-[420px] text-sm leading-6 text-[#cbb7a6]">Selección de categorías, productos y accesorios para consultar en nuestra tienda física de Sevilla.</p></div><div className="grid grid-cols-2 gap-x-12 gap-y-3 text-sm text-[#eadfd1]"><a href="#seleccion">Selección</a><a href="#categorias">Categorías</a><a href="#servicios">La tienda</a><a href="#inicio">Volver arriba</a></div></div>
+        <div className="mx-auto max-w-[1240px] border-b border-[#f1e8da]/20 pb-8"><StoreMark inverse /></div>
         <div className="mx-auto flex max-w-[1240px] flex-col justify-between gap-3 pt-6 text-[0.67rem] uppercase tracking-[0.12em] text-[#a9907e] md:flex-row"><span>© 2026 Shops Baleares S.L.</span><nav className="footer-legal-links" aria-label="Enlaces legales"><a href="/cookies">Cookies</a><a href="/privacy">Privacidad</a><a href="/aviso-legal">Aviso legal</a></nav></div>
       </footer>
     </div>

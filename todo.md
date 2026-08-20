@@ -1,5 +1,6 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Eliminar el texto descriptivo y los enlaces internos del bloque superior del pie.
 - [x] Integrar la foto real de entrada como hito visual entre selección de productos y consulta.
 - [x] Añadir un mensaje de llegada frente a la Catedral de Sevilla sin convertir el bloque en una sección de contacto convencional.
 - [x] Cambiar el rótulo de cabecera a “En frente de la Catedral de Sevilla”.
