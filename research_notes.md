@@ -57,3 +57,11 @@ La guía oficial de la Agencia Española de Protección de Datos sobre el uso de
 **Aplicación editorial:** La página no afirmará que existan cookies concretas que todavía no se hayan confirmado. El texto identificará las cookies técnicas de funcionamiento y señalará que las analíticas/terceros solo se activarán, si se usan, conforme a la configuración elegida. La política deberá revisarse cuando se añadan servicios de medición, mapas incrustados, vídeo u otros proveedores.
 
 Fuente: https://www.aepd.es/guias/guia-cookies.pdf
+
+## 8. Política de privacidad y aviso legal
+
+El texto consolidado de la Ley 34/2002, de servicios de la sociedad de la información y de comercio electrónico, consultado en el BOE con actualización publicada el 23 de enero de 2025, contiene en su artículo 10 el marco de información general del prestador. La página de Aviso Legal incorporará los datos confirmados del titular y marcará como pendiente cualquier información societaria o de contacto no proporcionada.
+
+La política de privacidad identificará al responsable, describirá de forma limitada las finalidades web que efectivamente se implementan y recogerá los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad, junto con la posibilidad de reclamar ante la AEPD. La visita directa a la página de derechos de la AEPD quedó bloqueada por sus sistemas, por lo que no se extraerá ningún contenido adicional de esa sesión.
+
+Fuentes: https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758 · https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos

@@ -1,5 +1,8 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Crear la página de Política de Privacidad con los datos confirmados de Shops Baleares S.L.
+- [x] Crear la página de Aviso Legal con los datos confirmados de Shops Baleares S.L.
+- [x] Enlazar Política de Privacidad y Aviso Legal desde los pies de página y las páginas legales existentes.
 - [x] Crear la página de política de cookies y enlazarla desde el pie de la landing.
 - [x] Incluir una gestión visible de preferencias de cookies en la nueva página.
 - [x] Incorporar los datos de Shops Baleares S.L. como responsable de la web en la política de cookies.

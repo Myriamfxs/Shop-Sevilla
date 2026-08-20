@@ -112,7 +112,7 @@ export default function Cookies() {
         </section>
       </main>
 
-      <footer className="legal-footer px-5 py-8 lg:px-10"><div className="mx-auto flex max-w-[1240px] flex-col justify-between gap-3 text-[.67rem] uppercase tracking-[.12em] text-[#bda996] md:flex-row"><span>© 2026 Shops Baleares S.L.</span><Link href="/">The Cannabis Shop · Sevilla</Link></div></footer>
+      <footer className="legal-footer px-5 py-8 lg:px-10"><div className="mx-auto flex max-w-[1240px] flex-col justify-between gap-3 text-[.67rem] uppercase tracking-[.12em] text-[#bda996] md:flex-row"><span>© 2026 Shops Baleares S.L.</span><nav className="legal-footer-links" aria-label="Enlaces legales"><Link href="/cookies">Cookies</Link><Link href="/privacy">Privacidad</Link><Link href="/aviso-legal">Aviso legal</Link></nav></div></footer>
     </div>
   );
 }
