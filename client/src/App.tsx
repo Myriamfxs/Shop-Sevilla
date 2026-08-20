@@ -1,4 +1,4 @@
-/** Diseño: Patio botánico contemporáneo. El marco usa una experiencia pública, clara y editorial para una presencia local en Sevilla. */
+/** Diseño: Rótulo de calle, oro y caoba. El marco soporta una landing corporativa de tienda física, con contenido local verificable. */
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";

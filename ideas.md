@@ -75,3 +75,13 @@ El símbolo es un **arco geométrico abierto que abraza una semilla abstracta**,
 - Todo marcador orientado al visitante se formula como guía de visita, nunca como texto administrativo de una plantilla. Los datos reales se incorporarán durante la puesta en producción sin exponer marcadores de “añadir” al público.
 - El sello circular de procedencia y la trama abstracta de azulejo son dispositivos de orientación recurrentes: acompañan los rótulos de sección y estructuran las áreas principales sin competir con el contenido.
 - El **azul azulejo** expresa estructura y autoridad local en rótulos, divisores y motivos; el **albaricoque quemado** se limita al refuerzo de navegación, acciones y puntos de orientación.
+
+---
+
+## Revisión de identidad — The Cannabis Shop Sevilla
+
+Las fotografías reales sustituyen la dirección “Patio botánico contemporáneo” como fuente visual primaria. La nueva dirección es **Rótulo de calle, oro y caoba**: una traducción digital del carácter genuino del local, con fondo granate oscuro, tipografía serif dorada, verde de hoja como acento secundario y una arquitectura de escaparate alto y estrecho. El objetivo ya no es suavizar la identidad de cannabis, sino mostrar con precisión la existencia de una tienda física de cannabis, conservando un lenguaje editorial y corporativo en la landing.
+
+El sistema pasa a utilizar el **oro de rótulo** (`#D7A731`) para titulares, rutas y acentos de confianza, **caoba perforada** (`#3A221D`) como fondo principal, **verde hoja de fachada** (`#79A461`) para categorías y separadores, y **marfil de piedra** (`#EEE7DA`) como superficie de lectura. Las fotografías reales de la entrada y el rótulo se convierten en el principal elemento de prueba de presencia local; no se utilizarán para sugerir consumo, venta online o cualidades de producto.
+
+La voz de marca será más directa y urbana: “The Cannabis Shop · Sevilla”, “Una tienda física en el centro”, “Consulta la selección y la información disponible en el local”. Las categorías que aparecen en la señalética se mostrarán únicamente como orientación del espacio. Se excluyen precios, ofertas, porcentajes, efectos, instrucciones, claims sanitarios y llamadas a la compra online.
