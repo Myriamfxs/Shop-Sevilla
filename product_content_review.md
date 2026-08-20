@@ -41,6 +41,27 @@ La foto de los aceites de CBD puede utilizarse como imagen de vitrina, acompaña
 | Ingredientes/INCI y advertencias | Solo si se desea crear una ficha completa y se proporciona la etiqueta o ficha del proveedor. |
 | Disponibilidad y precio | Confirmación de inventario y precio de tienda en el momento de publicar. |
 
+## Subcategorías de cosmética aportadas
+
+| Subcategoría para el catálogo en preparación | Alcance de la redacción |
+| --- | --- |
+| Cuidado corporal | Cremas para manos, cuerpo y pies, además de aceites y cremas de masaje. |
+| Cuidado facial | Referencias faciales y de contorno de ojos. Se excluye “anti-age” hasta confirmar el claim exacto del producto. |
+| Cuidado solar | Protector solar SPF 30 y aftersun, solo cuando el formato y el etiquetado de la referencia estén confirmados. |
+| Cuidado capilar | Mascarillas capilares y champús. |
+| Cuidado labial | Bálsamos labiales. |
+| Cuidado íntimo | Lubricantes como categoría general, sin usar los términos “estimulante” ni “retardante”. |
+
+Quedan fuera de la web, hasta contar con una validación individual, las referencias a gotas para acné y a crema para dolor muscular o articular. También se evita atribuir propiedades de reducción de dolor, tratamiento de acné, acción antiedad, estimulación o retardo.
+
+## Aceites: alegaciones excluidas y texto alternativo
+
+Las frases “excelente para los dolores crónicos”, “baja la ansiedad”, “ayuda al sueño”, “poder antioxidante” y “poder anticonvulsivo” se clasifican como **alegaciones de salud o terapéuticas** y no se incluirán en la landing. Tampoco se usarán equivalentes como “calma”, “relaja”, “apoyo al descanso” o “bienestar cuerpo y mente” para sugerir el mismo efecto.
+
+> **Texto alternativo para la web:** “Selección de aceites de CBD y aceites de cuidado en distintos formatos. Consulta en tienda las referencias etiquetadas y las fichas que estamos preparando.”
+
+Cuando se documente cada referencia, se podrá incorporar el nombre comercial, el formato y la información literal que figure en el envase, siempre que se confirme su categoría y uso previsto.
+
 ## Referencias
 
 [1]: https://www.aesan.gob.es/AECOSAN/web/noticias_y_actualizaciones/noticias/2022/cannabidiol.htm "AESAN: Las evaluaciones de nuevos alimentos derivados del cannabidiol quedan en suspenso a la espera de nuevos datos"

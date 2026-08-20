@@ -25,7 +25,7 @@ const assets = {
 };
 
 const categories = [
-  { id: "01", title: "Cosmética", tag: "Productos", object: "bottle", text: "Descubre la cosmética disponible dentro de nuestra selección de tienda.", tone: "mahogany" },
+  { id: "01", title: "Cosmética", tag: "Productos", object: "bottle", text: "Cuidado corporal, facial, capilar, labial y otras referencias de la selección de tienda.", tone: "mahogany" },
   { id: "02", title: "Aceites & extractos", tag: "Productos", object: "dropper", text: "Explora las referencias disponibles de esta categoría en el establecimiento.", tone: "gold" },
   { id: "03", title: "Vaporizadores", tag: "Productos", object: "device", text: "Encuentra dispositivos y complementos de la categoría disponibles en tienda.", tone: "green" },
   { id: "04", title: "Accesorios & gadgets", tag: "Accesorios", object: "case", text: "Complementos y objetos para completar tu selección de productos.", tone: "ivory" },
@@ -112,7 +112,7 @@ export default function Home() {
             <div className="self-start lg:sticky lg:top-12">
               <SectionLabel>Aceites y cosmética</SectionLabel>
               <h2 id="oils-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3.1rem,5.4vw,6.1rem)] leading-[.86] tracking-[-.07em]">La vitrina adelanta lo que viene.</h2>
-              <p className="mt-7 max-w-[430px] text-[1.03rem] leading-7 text-[#624c45]">Estamos preparando las fichas de aceites y cosmética. De momento, estas fotografías muestran parte de la selección real de la tienda y los formatos que iremos documentando.</p>
+              <p className="mt-7 max-w-[430px] text-[1.03rem] leading-7 text-[#624c45]">Estamos preparando las fichas de aceites de CBD y aceites de cuidado. De momento, estas fotografías muestran parte de la selección real de la tienda y los formatos que iremos documentando.</p>
               <a className="inline-category-link mt-9" href="#consulta">Preguntar por una referencia <ArrowUpRight size={17} /></a>
             </div>
             <div className="product-visual-grid">
@@ -124,6 +124,12 @@ export default function Home() {
             <article className="product-info-card"><span>01</span><h3 className="display-heading">Aceites</h3><p>Próximamente: fichas con marca, formato y la información que figure en cada envase.</p></article>
             <article className="product-info-card"><span>02</span><h3 className="display-heading">Masaje y cuidado</h3><p>Próximamente: referencias de cosmética y cuidado personal documentadas por categoría.</p></article>
             <article className="product-info-card"><span>03</span><h3 className="display-heading">Aromas y formatos</h3><p>Próximamente: presentaciones de la selección, siempre a partir del etiquetado confirmado.</p></article>
+          </div>
+          <div className="cosmetic-subcategories mx-auto max-w-[1240px]">
+            <div><SectionLabel>Cosmética en preparación</SectionLabel><p>Estas subcategorías formarán parte de las fichas de cosmética cuando terminemos de documentar cada referencia.</p></div>
+            <ul aria-label="Subcategorías de cosmética">
+              <li>Cuidado corporal y masaje</li><li>Cuidado facial y contorno de ojos</li><li>Cuidado solar y aftersun</li><li>Cuidado capilar</li><li>Cuidado labial</li><li>Cuidado íntimo</li>
+            </ul>
           </div>
         </section>
 

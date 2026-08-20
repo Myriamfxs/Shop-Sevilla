@@ -1,5 +1,9 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Excluir las alegaciones de dolor, ansiedad, sueño, antioxidante y anticonvulsivo de los aceites.
+- [x] Reemplazarlas por información objetiva de formato, etiqueta, categoría y consulta de referencia.
+- [x] Incorporar las subcategorías aptas de cosmética al bloque de catálogo en preparación.
+- [x] Mantener fuera las alegaciones de acné, dolor, anti-age, estimulación y retardo hasta que se validen.
 - [x] Sustituir los mensajes de compra y disponibilidad por un bloque de catálogo en preparación.
 - [x] Añadir únicamente datos de formato, aroma, categoría o uso visible que estén confirmados en el material aportado.
 - [x] Clasificar las afirmaciones proporcionadas en información apta, pendiente de validar o no apta para la web.
