@@ -25,9 +25,7 @@ const categories = [
   { id: "03", title: "Vaporizadores", text: "Encuentra dispositivos y accesorios de la categoría para revisar con atención presencial.", tone: "green" },
   { id: "04", title: "Accesorios & gadgets", text: "Objetos y complementos para configurar una selección que encaje contigo.", tone: "ivory" },
   { id: "05", title: "Semillas", text: "Una familia de producto para consultar por categorías y disponibilidad en el local.", tone: "ivory" },
-  { id: "06", title: "Ropa & lifestyle", text: "Prendas y objetos de cultura cannabis para completar tu estilo personal.", tone: "mahogany" },
-  { id: "07", title: "Productos de alimentación", text: "Consulta en tienda las referencias disponibles y su información de producto.", tone: "green" },
-  { id: "08", title: "Selección de tienda", text: "Novedades, favoritos y categorías que puedes explorar durante tu visita.", tone: "mahogany" },
+  { id: "06", title: "Selección de tienda", text: "Novedades, favoritos y categorías que puedes explorar durante tu visita.", tone: "mahogany" },
 ];
 
 const faqs = [
@@ -151,7 +149,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
               <article className={`category-card category-card-${category.tone}`} key={category.id}>
                 <div className="category-card-overlay" />
@@ -207,7 +205,7 @@ export default function Home() {
               <div className="feature-board-head"><span>THE CANNABIS SHOP</span><span>SELECCIÓN</span></div>
               <p className="feature-board-title display-heading">Muestrario de tienda.</p>
               <div className="feature-board-grid">
-                <span>Cosmética</span><span>Aceites & extractos</span><span>Vaporizadores</span><span>Accesorios</span><span>Semillas</span><span>Ropa</span>
+                <span>Cosmética</span><span>Aceites & extractos</span><span>Vaporizadores</span><span>Accesorios</span><span>Semillas</span><span>Selección de tienda</span>
               </div>
               <div className="feature-board-foot"><i aria-hidden="true">✦</i><span>Consulta presencial · Sevilla</span></div>
             </div>
