@@ -1,5 +1,6 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Eliminar el recuadro decorativo de envases y el texto de vitrina de la cabecera.
 - [x] Eliminar el texto descriptivo y los enlaces internos del bloque superior del pie.
 - [x] Integrar la foto real de entrada como hito visual entre selección de productos y consulta.
 - [x] Añadir un mensaje de llegada frente a la Catedral de Sevilla sin convertir el bloque en una sección de contacto convencional.
