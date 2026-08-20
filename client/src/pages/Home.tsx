@@ -3,12 +3,14 @@
  * muestra categorías y atención presencial sin precios, claims de salud ni detalles de producto no confirmados.
  */
 import { useEffect, useState, type FormEvent } from "react";
+import "./arrival.css";
 import {
   ArrowDownRight,
   ArrowUpRight,
   ChevronDown,
   Menu,
   MessageCircle,
+  MapPin,
   PackageOpen,
   Search,
   Sparkles,
@@ -21,6 +23,7 @@ const assets = {
   interior: "/manus-storage/the-cannabis-shop-interior_b3c16ce0.jpeg",
   cosmeticsOils: "/manus-storage/the-cannabis-shop-cosmetica-aceites_edd43117.jpeg",
   cbdOils: "/manus-storage/the-cannabis-shop-aceites-cbd-vitrina_d53925e2.jpeg",
+  entrance: "/manus-storage/the-cannabis-shop-entrada-catedral_b1ac7b5a.jpeg",
   logo: "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png",
 };
 
@@ -173,6 +176,24 @@ export default function Home() {
           <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-20">
             <div className="feature-selection-board" aria-label="Muestrario de categorías de tienda"><div className="feature-board-head"><span>THE CANNABIS SHOP</span><span>SELECCIÓN</span></div><p className="feature-board-title display-heading">Lo ves.<br />Lo preguntas.</p><div className="feature-board-grid"><span>Cosmética</span><span>Aceites & extractos</span><span>Vaporizadores</span><span>Accesorios</span><span>Semillas</span><span>Selección de tienda</span></div><div className="feature-board-foot"><i aria-hidden="true">✦</i><span>Consulta presencial · Sevilla</span></div></div>
             <div className="self-center"><SectionLabel>THE CANNABIS SHOP</SectionLabel><h2 className="display-heading mt-5 max-w-[510px] text-[clamp(3rem,5.1vw,5.85rem)] leading-[0.88] tracking-[-0.06em]">Productos para tu selección.</h2><p className="mt-7 max-w-[510px] text-[1.05rem] leading-7 text-[#654e47]">Recorre las categorías y encuentra cosmética, aceites y extractos, vaporizadores, accesorios, semillas y novedades disponibles en tienda.</p><a className="inline-category-link mt-9" href="#categorias">Ver todos los productos <ArrowUpRight size={17} /></a></div>
+          </div>
+        </section>
+
+        <section data-reveal className="arrival-marker px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="arrival-heading">
+          <div className="arrival-dots" aria-hidden="true" />
+          <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[1.08fr_.92fr] lg:items-center lg:gap-20">
+            <figure className="arrival-photo-frame">
+              <img src={assets.entrance} alt="Entrada de The Cannabis Shop frente a la Catedral de Sevilla" />
+              <figcaption><span>30</span> The Cannabis Shop · Sevilla</figcaption>
+            </figure>
+            <div className="arrival-copy">
+              <SectionLabel inverse>El punto de llegada</SectionLabel>
+              <p className="arrival-kicker"><MapPin size={16} /> Frente a la Catedral de Sevilla</p>
+              <h2 id="arrival-heading" className="display-heading">La puerta está donde empieza la selección.</h2>
+              <p>Entre la Catedral y el ritmo del centro, encontrarás la entrada de The Cannabis Shop. Guarda este punto para cuando quieras pasar a conocer la tienda en persona.</p>
+              <div className="arrival-line" aria-hidden="true"><span>THE CANNABIS SHOP</span><i /></div>
+              <a className="arrival-link" href="#consulta">Consultar una referencia <ArrowUpRight size={17} /></a>
+            </div>
           </div>
         </section>
 

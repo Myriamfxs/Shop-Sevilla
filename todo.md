@@ -1,5 +1,7 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Integrar la foto real de entrada como hito visual entre selección de productos y consulta.
+- [x] Añadir un mensaje de llegada frente a la Catedral de Sevilla sin convertir el bloque en una sección de contacto convencional.
 - [x] Cambiar el rótulo de cabecera a “En frente de la Catedral de Sevilla”.
 - [x] Regenerar el paquete ZIP de Hostinger con el acceso flotante de WhatsApp y todos los cambios recientes.
 - [x] Verificar que el ZIP conserva imágenes locales, `.htaccess` y las rutas legales.
