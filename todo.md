@@ -1,5 +1,10 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Sustituir por completo el relato de fachada y señalética por una arquitectura centrada en producto y servicio.
+- [x] Eliminar de la interfaz todas las fotografías donde aparezcan personas.
+- [x] Crear visuales de categorías de producto sin inventar marcas, envases, precios, efectos o características no aportadas.
+- [x] Reescribir titulares, categorías y servicios para explicar la selección disponible y la atención en tienda.
+- [x] Validar la nueva landing en escritorio y móvil.
 - [x] Ajustar nombre, identidad gráfica y tono visual a la fachada real de The Cannabis Shop.
 - [x] Incorporar las fotografías reales aportadas como recursos web optimizados y con textos alternativos descriptivos.
 - [x] Reescribir la landing para una tienda de cannabis de presencia física, sin comercio electrónico, precios, promesas de salud ni ofertas de productos regulados.

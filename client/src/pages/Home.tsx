@@ -1,66 +1,58 @@
 /**
- * Diseño: Rótulo de calle, oro y caoba. La página refleja la tienda física real de The Cannabis Shop
- * con fotografía de fachada, tipografía de rótulo y contenido corporativo prudente, sin venta online ni claims.
+ * Diseño: Showroom de selección. Producto y servicio primero, con imágenes de estudio sin marca;
+ * no muestra personas, fachadas, precios, claims de salud ni detalles de producto no confirmados.
  */
 import { useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
   ChevronDown,
-  Clock3,
-  Info,
-  MapPin,
   Menu,
+  PackageOpen,
+  Search,
+  Sparkles,
   Store,
   X,
 } from "lucide-react";
 
 const assets = {
-  facade: "/manus-storage/the-cannabis-shop-sevilla-fachada-horizontal_9f62f6ec.jpeg",
-  entrance: "/manus-storage/the-cannabis-shop-sevilla-entrada-vertical_98ac1b94.jpeg",
-  street: "/manus-storage/the-cannabis-shop-sevilla-calle_91026c8e.jpeg",
-  verticalFacade: "/manus-storage/the-cannabis-shop-sevilla-fachada-vertical_282fa968.jpeg",
+  hero: "/manus-storage/cannabis-shop-showroom-hero_ab2b9183.jpg",
 };
 
 const categories = [
-  "Productos",
-  "Ropa",
-  "Cosmética",
-  "Extractos",
-  "Comidas",
-  "Accesorios & gadget",
-  "Aceite",
-  "Semillas",
-  "Vaporizadores",
+  { id: "01", title: "Cosmética", text: "Una categoría para descubrir fórmulas, texturas y selección disponible en tienda.", tone: "mahogany" },
+  { id: "02", title: "Aceites & extractos", text: "Consulta las referencias presentes y su información disponible directamente en el establecimiento.", tone: "gold" },
+  { id: "03", title: "Vaporizadores", text: "Encuentra dispositivos y accesorios de la categoría para revisar con atención presencial.", tone: "green" },
+  { id: "04", title: "Accesorios & gadgets", text: "Objetos y complementos para configurar una selección que encaje contigo.", tone: "ivory" },
+  { id: "05", title: "Semillas", text: "Una familia de producto para consultar por categorías y disponibilidad en el local.", tone: "ivory" },
+  { id: "06", title: "Ropa & lifestyle", text: "Prendas y objetos de cultura cannabis para completar tu estilo personal.", tone: "mahogany" },
+  { id: "07", title: "Productos de alimentación", text: "Consulta en tienda las referencias disponibles y su información de producto.", tone: "green" },
+  { id: "08", title: "Selección de tienda", text: "Novedades, favoritos y categorías que puedes explorar durante tu visita.", tone: "mahogany" },
 ];
 
-const faqItems = [
+const faqs = [
   {
-    question: "¿Dónde encuentro el horario actualizado?",
-    answer:
-      "Consulta el Perfil de Empresa de The Cannabis Shop antes de desplazarte. Ahí deben figurar el horario habitual, los cambios de festivos y la ruta actualizada.",
+    question: "¿Cómo conozco la selección disponible?",
+    answer: "La disponibilidad se consulta directamente en tienda. El equipo puede ayudarte a localizar las categorías y referencias que buscas durante tu visita.",
   },
   {
-    question: "¿Puedo consultar las categorías antes de visitar?",
-    answer:
-      "La señalética del local recoge las principales categorías. La atención presencial puede ayudarte a localizar la información disponible y a resolver dudas de visita.",
+    question: "¿Ofrecéis orientación sobre los productos?",
+    answer: "La atención presencial está pensada para ayudarte a navegar por las categorías, la información disponible de cada referencia y los accesorios relacionados.",
   },
   {
-    question: "¿Esta página incluye venta online o consejos de salud?",
-    answer:
-      "No. Esta landing presenta el establecimiento físico y no incorpora carrito, precios, promociones, instrucciones de uso ni promesas de salud.",
+    question: "¿Incluye esta página compra online?",
+    answer: "No. Esta landing está diseñada como escaparate de categorías y servicios de la tienda física. No incorpora carrito, precios ni promociones online.",
   },
 ];
 
 function StoreMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <a className={`store-mark ${inverse ? "store-mark-inverse" : ""}`} href="#inicio" aria-label="Ir al inicio de The Cannabis Shop">
-      <span className="mark-leaf" aria-hidden="true">✦</span>
+      <span className="mark-monogram" aria-hidden="true">TCS</span>
       <span className="mark-words">
         <small>The</small>
         <strong>Cannabis</strong>
         <strong>Shop</strong>
-        <em>Sevilla</em>
       </span>
     </a>
   );
@@ -80,21 +72,21 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#eee7da] text-[#2d1c18]">
-      <header className="site-header site-header-dark">
+    <div className="min-h-screen overflow-x-hidden bg-[#f0e8db] text-[#2d1c18]">
+      <header className="site-header">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 lg:px-10">
           <StoreMark inverse />
-          <nav className="hidden items-center gap-7 text-[0.69rem] font-extrabold uppercase tracking-[0.16em] text-[#f0e6d7] lg:flex" aria-label="Navegación principal">
-            <a href="#tienda">La tienda</a>
-            <a href="#categorías">Categorías</a>
-            <a href="#visita">Visita</a>
+          <nav className="hidden items-center gap-7 text-[0.69rem] font-extrabold uppercase tracking-[0.16em] text-[#f5ecdf] lg:flex" aria-label="Navegación principal">
+            <a href="#seleccion">Selección</a>
+            <a href="#categorias">Categorías</a>
+            <a href="#servicios">Servicios</a>
             <a href="#preguntas">Preguntas</a>
           </nav>
-          <a className="header-cta header-cta-gold hidden lg:inline-flex" href="#visita">
-            Antes de visitar <ArrowUpRight size={15} strokeWidth={2.3} />
+          <a className="header-link hidden lg:inline-flex" href="#categorias">
+            Explorar categorías <ArrowDownRight size={15} />
           </a>
           <button
-            className="menu-button menu-button-dark lg:hidden"
+            className="menu-button lg:hidden"
             type="button"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={menuOpen}
@@ -104,16 +96,15 @@ export default function Home() {
           </button>
         </div>
         {menuOpen && (
-          <nav className="mobile-menu mobile-menu-dark" aria-label="Navegación móvil">
+          <nav className="mobile-menu" aria-label="Navegación móvil">
             {[
-              ["La tienda", "#tienda"],
-              ["Categorías", "#categorías"],
-              ["Visita", "#visita"],
+              ["Selección", "#seleccion"],
+              ["Categorías", "#categorias"],
+              ["Servicios", "#servicios"],
               ["Preguntas", "#preguntas"],
             ].map(([label, href]) => (
               <a href={href} key={href} onClick={() => setMenuOpen(false)}>
-                {label}
-                <ArrowUpRight size={18} />
+                {label}<ArrowUpRight size={17} />
               </a>
             ))}
           </nav>
@@ -121,244 +112,172 @@ export default function Home() {
       </header>
 
       <main>
-        <section id="inicio" className="shop-hero" aria-labelledby="hero-heading">
-          <img className="shop-hero-image" src={assets.facade} alt="Fachada real de The Cannabis Shop en Sevilla" />
-          <div className="shop-hero-shade" />
-          <div className="shop-hero-grain" aria-hidden="true" />
-          <div className="relative mx-auto grid min-h-[760px] max-w-[1440px] px-5 pb-10 pt-32 lg:grid-cols-[1.07fr_0.93fr] lg:px-10 lg:pb-14 lg:pt-40">
+        <section id="inicio" className="product-hero" aria-labelledby="hero-heading">
+          <div className="product-hero-texture" aria-hidden="true" />
+          <img className="product-hero-image" src={assets.hero} alt="Composición editorial de una selección de productos y accesorios sin marca" />
+          <div className="product-hero-shade" />
+          <div className="relative mx-auto grid min-h-[760px] max-w-[1440px] px-5 pb-10 pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:pb-14 lg:pt-36">
             <div className="self-end">
-              <SectionLabel inverse>Tienda física · Sevilla</SectionLabel>
-              <h1 id="hero-heading" className="shop-hero-title mt-6">
-                The Cannabis
-                <span>Shop</span>
+              <SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel>
+              <h1 id="hero-heading" className="product-hero-heading mt-6">
+                Explora la selección.
+                <em>Consulta en tienda.</em>
               </h1>
-              <p className="mt-7 max-w-[520px] text-[1.06rem] leading-7 text-[#f0e6d7] lg:text-[1.14rem]">
-                Una tienda de cannabis en Sevilla con presencia real de calle. Conócenos, revisa las categorías señalizadas en el local y prepara tu visita con información clara.
+              <p className="mt-7 max-w-[530px] text-[1.05rem] leading-7 text-[#f1e8da] lg:text-[1.15rem]">
+                Categorías de producto, accesorios y atención presencial en The Cannabis Shop · Sevilla. Ven a explorar la selección y consulta la disponibilidad en el local.
               </p>
               <div className="mt-9 flex flex-wrap gap-4">
-                <a className="button-gold" href="#tienda">
-                  Conocer la tienda <ArrowDownRight size={18} />
-                </a>
-                <a className="text-link-light" href="#visita">
-                  Antes de desplazarte <ArrowUpRight size={16} />
-                </a>
+                <a className="button-gold" href="#categorias">Ver categorías <ArrowDownRight size={18} /></a>
+                <a className="text-link-light" href="#servicios">Cómo te atendemos <ArrowUpRight size={16} /></a>
               </div>
             </div>
-            <aside className="hero-side-note self-end lg:justify-self-end">
-              <Store size={19} strokeWidth={1.7} />
-              <p>
-                Tienda física en Sevilla. Esta página presenta el espacio y su información de visita; no incorpora compra online, precios ni promociones.
-              </p>
+            <aside className="hero-selection-note self-end lg:justify-self-end">
+              <Sparkles size={18} strokeWidth={1.8} />
+              <p>Tienda física en Sevilla · categorías, accesorios y disponibilidad para consultar presencialmente.</p>
             </aside>
           </div>
         </section>
 
-        <section id="tienda" className="relative overflow-hidden bg-[#3a221d] px-5 py-20 text-[#eee7da] lg:px-10 lg:py-28" aria-labelledby="store-heading">
-          <div className="perforated-field" aria-hidden="true" />
-          <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <section id="seleccion" className="bg-[#f0e8db] px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="selection-heading">
+          <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[0.73fr_1.27fr] lg:items-end">
             <div>
-              <SectionLabel inverse>La tienda</SectionLabel>
-              <h2 id="store-heading" className="display-heading mt-5 max-w-[500px] text-[clamp(3rem,5.6vw,6.25rem)] leading-[0.87] tracking-[-0.06em]">
-                Se reconoce antes de entrar.
+              <SectionLabel>La selección</SectionLabel>
+              <h2 id="selection-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3rem,5.4vw,6rem)] leading-[0.87] tracking-[-0.06em]">
+                Categorías para explorar en tienda.
               </h2>
             </div>
-            <div className="max-w-[575px] justify-self-end lg:pb-3">
-              <p className="text-[1.1rem] leading-8 text-[#e7dacc]">
-                El rótulo, la entrada y la señalética forman parte de una identidad propia: caoba, oro y verde. La landing conserva ese carácter para que quien llega desde Google encuentre el mismo lugar que ve al doblar la esquina.
-              </p>
-              <div className="mt-10 grid grid-cols-3 border-t border-[#eee7da]/25 pt-5">
-                {[
-                  ["01", "Identidad\nde calle"],
-                  ["02", "Atención\npresencial"],
-                  ["03", "Sevilla\nen persona"],
-                ].map(([number, label]) => (
-                  <div key={number}>
-                    <span className="stat-index-gold">{number}</span>
-                    <p className="text-[0.68rem] font-bold uppercase leading-[1.45] tracking-[0.08em] text-[#e7dacc]">
-                      {label.split("\n").map((line) => <span className="block" key={line}>{line}</span>)}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <p className="max-w-[595px] text-[1.05rem] leading-7 text-[#654e47] lg:mb-2 lg:justify-self-end">
+              Un recorrido directo por las familias de producto y accesorios que puedes consultar en el local. Empieza por tu categoría y continúa con la atención presencial.
+            </p>
           </div>
-        </section>
 
-        <section id="categorías" className="bg-[#eee7da] px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="categories-heading">
-          <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
-            <div>
-              <SectionLabel>Categorías en el local</SectionLabel>
-              <h2 id="categories-heading" className="display-heading mt-5 max-w-[450px] text-[clamp(2.9rem,5.2vw,5.9rem)] leading-[0.88] tracking-[-0.06em]">
-                Lo que muestra la señalética.
-              </h2>
-              <p className="mt-7 max-w-[400px] text-[1.02rem] leading-7 text-[#5b4540]">
-                Estas son las categorías visibles en la entrada. Para conocer la información disponible de cada una, consulta directamente en tienda.
-              </p>
-            </div>
-            <div className="category-board">
-              <div className="category-board-heading">
-                <span>THE CANNABIS SHOP</span>
-                <span>SEVILLA</span>
-              </div>
-              <div className="category-list">
-                {categories.map((category, index) => (
-                  <div className="category-item" key={category}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <strong>{category}</strong>
-                    <i aria-hidden="true">↗</i>
-                  </div>
-                ))}
-              </div>
-              <p className="category-board-note">Orientación de tienda · La disponibilidad se confirma presencialmente.</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-5 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:gap-20">
-            <div className="real-photo-frame real-photo-frame-tall">
-              <img src={assets.entrance} alt="Entrada real de The Cannabis Shop con su señalética de categorías" />
-              <span className="frame-caption">Entrada y señalética del local</span>
-            </div>
-            <div className="lg:pt-16">
-              <SectionLabel>Una visita con contexto</SectionLabel>
-              <h2 className="display-heading mt-5 max-w-[510px] text-[clamp(2.9rem,5.2vw,5.85rem)] leading-[0.89] tracking-[-0.06em]">
-                Local, directo y reconocible.
-              </h2>
-              <p className="mt-7 max-w-[530px] text-[1.05rem] leading-7 text-[#5b4540]">
-                La página no intenta sustituir una visita ni convertir información en una promesa. Su función es sencilla: identificar la tienda, facilitar el contacto y mostrar con honestidad el entorno en el que te recibimos.
-              </p>
-              <div className="mt-10 border-y border-[#3a221d]/20">
-                {[
-                  ["A", "Identidad física", "Fotografías reales de fachada y entrada para reconocer el establecimiento."],
-                  ["B", "Información de visita", "Horarios, ruta y contacto deben consultarse en la ficha actualizada del negocio."],
-                  ["C", "Atención presencial", "Las consultas sobre categorías e información disponible se realizan directamente en el local."],
-                ].map(([letter, title, text]) => (
-                  <div className="store-principle" key={letter}>
-                    <span>{letter}</span>
-                    <div>
-                      <h3>{title}</h3>
-                      <p>{text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="visita" className="relative overflow-hidden bg-[#6e422f] px-5 py-20 text-[#eee7da] lg:px-10 lg:py-28" aria-labelledby="visit-heading">
-          <div className="visit-motif" aria-hidden="true">TCS · SEVILLA · TCS · SEVILLA ·</div>
-          <div className="relative mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
-            <div>
-              <SectionLabel inverse>Antes de desplazarte</SectionLabel>
-              <h2 id="visit-heading" className="display-heading mt-5 max-w-[480px] text-[clamp(2.9rem,5.2vw,5.85rem)] leading-[0.89] tracking-[-0.06em]">
-                La visita empieza aquí.
-              </h2>
-              <p className="mt-7 max-w-[475px] text-[1.04rem] leading-7 text-[#eee2d5]">
-                Confirma el horario y la ruta en el Perfil de Empresa antes de salir. La información al día es la mejor forma de que tu llegada sea sencilla.
-              </p>
-              <img className="mt-10 w-full max-w-[425px] object-cover" src={assets.verticalFacade} alt="Fachada vertical de The Cannabis Shop en Sevilla" />
-            </div>
-            <div className="visit-plaque">
-              <div className="visit-plaque-top">
-                <span className="plaque-symbol">✦</span>
-                <p>THE CANNABIS SHOP · SEVILLA</p>
-              </div>
-              <h3 className="display-heading">Para llegar bien informado.</h3>
-              <div className="visit-plaque-lines">
-                <div>
-                  <MapPin size={20} strokeWidth={1.7} />
-                  <p><span>Ubicación</span>Consulta la ruta de la ficha del negocio</p>
+          <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((category) => (
+              <article className={`category-card category-card-${category.tone}`} key={category.id}>
+                <div className="category-card-overlay" />
+                <div className="category-card-content">
+                  <span>{category.id}</span>
+                  <h3 className="display-heading">{category.title}</h3>
+                  <p>{category.text}</p>
+                  <a href="#servicios" aria-label={`Consultar ${category.title} en tienda`}>Consultar en tienda <ArrowUpRight size={16} /></a>
                 </div>
-                <div>
-                  <Clock3 size={20} strokeWidth={1.7} />
-                  <p><span>Horario</span>Comprueba la apertura antes de desplazarte</p>
-                </div>
-                <div>
-                  <Info size={20} strokeWidth={1.7} />
-                  <p><span>Consulta</span>Pregunta en el local por la información disponible</p>
-                </div>
-              </div>
-              <a className="visit-plaque-cta" href="#preguntas">
-                Ver preguntas de visita <ArrowUpRight size={18} />
-              </a>
-              <p className="visit-plaque-caption">Los datos de contacto, mapa y horarios reales se incorporarán a esta sección al confirmar la ficha de Google Business.</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="servicios" className="relative overflow-hidden bg-[#2f1c18] px-5 py-20 text-[#f1e8da] lg:px-10 lg:py-28" aria-labelledby="services-heading">
+          <div className="service-ghost" aria-hidden="true">SELECCIÓN</div>
+          <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <SectionLabel inverse>Servicios en tienda</SectionLabel>
+              <h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">
+                Una tienda es también servicio.
+              </h2>
+              <p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">
+                Más allá de la selección, estamos para facilitar una experiencia de tienda directa: localizar lo que buscas, comprender las categorías disponibles y preparar tu visita con contexto.
+              </p>
+            </div>
+            <div className="service-grid">
+              <article>
+                <Search size={23} strokeWidth={1.65} />
+                <span>01</span>
+                <h3 className="display-heading">Orientación por categorías</h3>
+                <p>Te ayudamos a ubicar la familia de producto o accesorio que quieres consultar al llegar.</p>
+              </article>
+              <article>
+                <PackageOpen size={23} strokeWidth={1.65} />
+                <span>02</span>
+                <h3 className="display-heading">Selección en tienda</h3>
+                <p>Consulta referencias y disponibilidad de forma presencial, dentro de la selección del establecimiento.</p>
+              </article>
+              <article>
+                <Store size={23} strokeWidth={1.65} />
+                <span>03</span>
+                <h3 className="display-heading">Atención presencial</h3>
+                <p>Un punto de contacto directo para explorar productos, complementos y cultura cannabis en un solo lugar.</p>
+              </article>
             </div>
           </div>
         </section>
 
-        <section id="preguntas" className="relative overflow-hidden bg-[#eee7da] px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="faq-heading">
-          <div className="mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-            <div>
-              <SectionLabel>Preguntas de visita</SectionLabel>
-              <h2 id="faq-heading" className="display-heading mt-5 max-w-[430px] text-[clamp(2.95rem,5.1vw,5.75rem)] leading-[0.89] tracking-[-0.06em]">
-                Antes de cruzar la puerta.
-              </h2>
-              <div className="faq-photo-card mt-10">
-                <img src={assets.street} alt="Vista exterior de The Cannabis Shop integrada en una calle de Sevilla" />
-                <span>Una tienda física, una identidad visible.</span>
+        <section className="product-feature px-5 py-20 lg:px-10 lg:py-28">
+          <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-20">
+            <div className="feature-selection-board" aria-label="Muestrario de categorías de tienda">
+              <div className="feature-board-head"><span>THE CANNABIS SHOP</span><span>SELECCIÓN</span></div>
+              <p className="feature-board-title display-heading">Muestrario de tienda.</p>
+              <div className="feature-board-grid">
+                <span>Cosmética</span><span>Aceites & extractos</span><span>Vaporizadores</span><span>Accesorios</span><span>Semillas</span><span>Ropa</span>
               </div>
+              <div className="feature-board-foot"><i aria-hidden="true">✦</i><span>Consulta presencial · Sevilla</span></div>
+            </div>
+            <div className="self-center">
+              <SectionLabel>THE CANNABIS SHOP</SectionLabel>
+              <h2 className="display-heading mt-5 max-w-[510px] text-[clamp(3rem,5.1vw,5.85rem)] leading-[0.88] tracking-[-0.06em]">
+                Selección de tienda, atención presencial.
+              </h2>
+              <p className="mt-7 max-w-[510px] text-[1.05rem] leading-7 text-[#654e47]">
+                Recorre las categorías con facilidad, consulta la disponibilidad y recibe atención presencial para localizar la referencia o el accesorio que buscas.
+              </p>
+              <a className="inline-category-link mt-9" href="#categorias">Explorar todas las categorías <ArrowUpRight size={17} /></a>
+            </div>
+          </div>
+        </section>
+
+        <section id="preguntas" className="relative overflow-hidden bg-[#e6ddce] px-5 py-20 text-[#2f1c18] lg:px-10 lg:py-28" aria-labelledby="faq-heading">
+          <div className="faq-grid-pattern" aria-hidden="true" />
+          <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <SectionLabel>Preguntas frecuentes</SectionLabel>
+              <h2 id="faq-heading" className="display-heading mt-5 max-w-[460px] text-[clamp(3rem,5.2vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">
+                Consulta antes de venir.
+              </h2>
+              <p className="mt-7 max-w-[400px] text-[1rem] leading-7 text-[#513221]">
+                Si necesitas una referencia concreta, la mejor forma de comprobarla es consultarla directamente durante tu visita a la tienda.
+              </p>
             </div>
             <div className="lg:pt-5">
-              {faqItems.map((item, index) => {
+              {faqs.map((item, index) => {
                 const isOpen = openFaq === index;
                 return (
-                  <div className="shop-faq-item" key={item.question}>
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : index)}
-                      aria-expanded={isOpen}
-                      className="shop-faq-trigger"
-                    >
-                      <span>{item.question}</span>
-                      <ChevronDown className={isOpen ? "rotate-180" : ""} size={22} />
+                  <div className="faq-item" key={item.question}>
+                    <button type="button" onClick={() => setOpenFaq(isOpen ? null : index)} aria-expanded={isOpen}>
+                      <span>{item.question}</span><ChevronDown className={isOpen ? "rotate-180" : ""} size={22} />
                     </button>
-                    {isOpen && <p className="shop-faq-answer">{item.answer}</p>}
+                    {isOpen && <p>{item.answer}</p>}
                   </div>
                 );
               })}
-              <p className="mt-10 max-w-[610px] text-sm leading-6 text-[#705952]">
-                La información final sobre cualquier referencia depende de su categoría, etiquetado, composición, documentación y marco aplicable. La web debe revisarse antes de publicar contenido adicional sobre productos.
-              </p>
             </div>
           </div>
         </section>
 
-        <section className="shop-closing px-5 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto max-w-[960px] text-center">
+        <section className="closing-product px-5 py-20 lg:px-10 lg:py-28">
+          <div className="mx-auto max-w-[940px] text-center">
             <SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel>
-            <h2 className="display-heading mt-6 text-[clamp(3.15rem,6.6vw,7.2rem)] leading-[0.86] tracking-[-0.065em] text-[#e2b741]">
-              Una tienda que se reconoce en la calle.
+            <h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">
+              Consulta la selección en tienda.
             </h2>
-            <p className="mx-auto mt-7 max-w-[575px] text-[1.04rem] leading-7 text-[#e8dbcb]">
-              Consulta la ficha actualizada del negocio para planificar tu visita y encontrar la información práctica que necesitas antes de venir.
+            <p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">
+              Explora las categorías, consulta la disponibilidad y encuentra en tienda el producto o accesorio que estás buscando.
             </p>
-            <a className="button-gold mt-10" href="#visita">
-              Preparar la visita <ArrowUpRight size={17} />
-            </a>
+            <a className="button-gold mt-10" href="#categorias">Ver categorías <ArrowUpRight size={17} /></a>
           </div>
         </section>
       </main>
 
-      <footer className="bg-[#211512] px-5 pb-8 pt-10 text-[#eee7da] lg:px-10">
-        <div className="mx-auto grid max-w-[1240px] gap-10 border-b border-[#eee7da]/20 pb-10 md:grid-cols-[1fr_auto]">
+      <footer className="bg-[#20130f] px-5 pb-8 pt-10 text-[#f1e8da] lg:px-10">
+        <div className="mx-auto grid max-w-[1240px] gap-10 border-b border-[#f1e8da]/20 pb-10 md:grid-cols-[1fr_auto]">
           <div>
             <StoreMark inverse />
-            <p className="mt-5 max-w-[420px] text-sm leading-6 text-[#c9b9a9]">
-              Tienda física de cannabis en Sevilla. Consulta el Perfil de Empresa para horarios, ubicación y datos de contacto actualizados.
-            </p>
+            <p className="mt-5 max-w-[420px] text-sm leading-6 text-[#cbb7a6]">Selección de categorías, productos y accesorios para consultar en nuestra tienda física de Sevilla.</p>
           </div>
-          <div className="grid grid-cols-2 gap-x-12 gap-y-3 text-sm text-[#e8dbcb]">
-            <a href="#tienda">La tienda</a>
-            <a href="#categorías">Categorías</a>
-            <a href="#visita">Visita</a>
-            <a href="#inicio">Volver arriba</a>
+          <div className="grid grid-cols-2 gap-x-12 gap-y-3 text-sm text-[#eadfd1]">
+            <a href="#seleccion">Selección</a><a href="#categorias">Categorías</a><a href="#servicios">Servicios</a><a href="#inicio">Volver arriba</a>
           </div>
         </div>
         <div className="mx-auto flex max-w-[1240px] flex-col justify-between gap-3 pt-6 text-[0.67rem] uppercase tracking-[0.12em] text-[#a9907e] md:flex-row">
-          <span>© 2026 The Cannabis Shop · Sevilla</span>
-          <span>Privacidad y aviso legal · enlaces por añadir</span>
+          <span>© 2026 The Cannabis Shop · Sevilla</span><span>Privacidad y aviso legal · enlaces por añadir</span>
         </div>
       </footer>
     </div>
