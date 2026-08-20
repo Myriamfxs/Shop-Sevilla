@@ -1,5 +1,7 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Subir el logotipo oficial de The Cannabis Shop by Hemp Brothers y usarlo como recurso principal de marca.
+- [x] Sustituir el monograma textual de cabecera y pie por el logotipo oficial, y actualizar el favicon.
 - [x] Retirar Ropa & lifestyle y Productos de alimentación de todas las listas y muestrarios de categorías.
 - [x] Sustituir por completo el relato de fachada y señalética por una arquitectura centrada en producto y servicio.
 - [x] Eliminar de la interfaz todas las fotografías donde aparezcan personas.

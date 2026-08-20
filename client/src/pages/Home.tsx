@@ -17,6 +17,7 @@ import {
 
 const assets = {
   hero: "/manus-storage/cannabis-shop-showroom-hero_ab2b9183.jpg",
+  logo: "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png",
 };
 
 const categories = [
@@ -46,12 +47,7 @@ const faqs = [
 function StoreMark({ inverse = false }: { inverse?: boolean }) {
   return (
     <a className={`store-mark ${inverse ? "store-mark-inverse" : ""}`} href="#inicio" aria-label="Ir al inicio de The Cannabis Shop">
-      <span className="mark-monogram" aria-hidden="true">TCS</span>
-      <span className="mark-words">
-        <small>The</small>
-        <strong>Cannabis</strong>
-        <strong>Shop</strong>
-      </span>
+      <img src={assets.logo} alt="Logotipo de The Cannabis Shop by Hemp Brothers" />
     </a>
   );
 }
