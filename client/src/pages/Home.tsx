@@ -8,10 +8,12 @@ import {
   ArrowDownRight,
   ArrowUpRight,
   ChevronDown,
+  Mail,
   Menu,
   MessageCircle,
   MapPin,
   PackageOpen,
+  Phone,
   Search,
   Sparkles,
   Store,
@@ -178,24 +180,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section data-reveal className="arrival-marker px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="arrival-heading">
-          <div className="arrival-dots" aria-hidden="true" />
-          <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[1.08fr_.92fr] lg:items-center lg:gap-20">
-            <figure className="arrival-photo-frame">
-              <img src={assets.entrance} alt="Entrada de The Cannabis Shop frente a la Catedral de Sevilla" />
-              <figcaption><span>30</span> The Cannabis Shop · Sevilla</figcaption>
-            </figure>
-            <div className="arrival-copy">
-              <SectionLabel inverse>El punto de llegada</SectionLabel>
-              <p className="arrival-kicker"><MapPin size={16} /> Frente a la Catedral de Sevilla</p>
-              <h2 id="arrival-heading" className="display-heading">La puerta está donde empieza la selección.</h2>
-              <p>Entre la Catedral y el ritmo del centro, encontrarás la entrada de The Cannabis Shop. Guarda este punto para cuando quieras pasar a conocer la tienda en persona.</p>
-              <div className="arrival-line" aria-hidden="true"><span>THE CANNABIS SHOP</span><i /></div>
-              <a className="arrival-link" href="#consulta">Consultar una referencia <ArrowUpRight size={17} /></a>
-            </div>
-          </div>
-        </section>
-
         <section id="preguntas" data-reveal className="relative overflow-hidden bg-[#e6ddce] px-5 py-20 text-[#2f1c18] lg:px-10 lg:py-28" aria-labelledby="faq-heading">
           <div className="faq-grid-pattern" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
@@ -229,6 +213,31 @@ export default function Home() {
 
         <section data-reveal className="closing-product px-5 py-20 lg:px-10 lg:py-28">
           <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">Descubre nuestra selección.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías, consulta la disponibilidad y compra tus productos directamente en The Cannabis Shop.</p><a className="button-gold mt-10" href="#consulta">Consultar disponibilidad <ArrowUpRight size={17} /></a></div>
+        </section>
+
+        <section id="ubicacion" data-reveal className="arrival-marker arrival-marker-final px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="arrival-heading">
+          <div className="arrival-dots" aria-hidden="true" />
+          <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-20">
+            <div className="arrival-copy">
+              <SectionLabel inverse>Ven a conocernos</SectionLabel>
+              <p className="arrival-kicker"><MapPin size={16} /> Frente a la Catedral de Sevilla</p>
+              <h2 id="arrival-heading" className="display-heading">La puerta está en Avenida Constitución, 30.</h2>
+              <p>Encuentra The Cannabis Shop en pleno centro de Sevilla. Guarda la dirección, abre la ruta o llámanos antes de pasar por la tienda.</p>
+              <div className="arrival-route-actions">
+                <a className="arrival-map-button" href="https://maps.app.goo.gl/ANst3eEmqenoE7gE6" target="_blank" rel="noreferrer"><MapPin size={17} /> Abrir en Google Maps</a>
+                <a className="arrival-phone-button" href="tel:+34954118908"><Phone size={16} /> Llamar a la tienda</a>
+              </div>
+            </div>
+            <figure className="arrival-photo-frame">
+              <img src={assets.entrance} alt="Entrada de The Cannabis Shop en Avenida Constitución, 30, Sevilla" />
+              <figcaption><span>30</span> Avenida Constitución · Sevilla</figcaption>
+            </figure>
+          </div>
+          <div className="relative mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#b88d38] md:grid-cols-3">
+            <a className="arrival-contact-item" href="tel:+34954118908"><Phone size={20} /><span>Teléfono tienda</span><strong>954 118 908</strong></a>
+            <a className="arrival-contact-item arrival-contact-item-green" href="https://wa.me/34634205061" target="_blank" rel="noreferrer"><MessageCircle size={20} /><span>WhatsApp</span><strong>634 205 061</strong></a>
+            <a className="arrival-contact-item" href="mailto:cannabissevilla@lavetia.es"><Mail size={20} /><span>Email</span><strong>cannabissevilla@lavetia.es</strong></a>
+          </div>
         </section>
       </main>
 

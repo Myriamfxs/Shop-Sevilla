@@ -1,5 +1,8 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Mover el hito de llegada al cierre final de la landing.
+- [x] Añadir Avenida Constitución, 30, 41001 Sevilla, los teléfonos 954 118 908 y 634 205 061, y el correo cannabissevilla@lavetia.es.
+- [x] Añadir un enlace de Google Maps con la URL confirmada por el usuario.
 - [x] Eliminar el recuadro decorativo de envases y el texto de vitrina de la cabecera.
 - [x] Eliminar el texto descriptivo y los enlaces internos del bloque superior del pie.
 - [x] Integrar la foto real de entrada como hito visual entre selección de productos y consulta.
