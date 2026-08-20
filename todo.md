@@ -1,5 +1,7 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Añadir un botón flotante de WhatsApp con enlace al número 634 205 061.
+- [x] Garantizar que sea accesible y no interfiera con el aviso de cookies ni el formulario en escritorio y móvil.
 - [x] Añadir un efecto de reflejo de vitrina al hero y a los visuales principales.
 - [x] Generar el paquete de producción estático con redirecciones compatibles con Hostinger.
 - [x] Documentar la subida del paquete y la configuración de rutas en Hostinger.

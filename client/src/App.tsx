@@ -10,13 +10,14 @@ import Cookies from "./pages/Cookies";
 import Privacy from "./pages/Privacy";
 import LegalNotice from "./pages/LegalNotice";
 import Home from "./pages/Home";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 function Router() {
   return <Switch><Route path="/" component={Home} /><Route path="/cookies" component={Cookies} /><Route path="/privacy" component={Privacy} /><Route path="/aviso-legal" component={LegalNotice} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
 }
 
 function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Router /><CookieBanner /></TooltipProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><TooltipProvider><Toaster /><Router /><FloatingWhatsApp /><CookieBanner /></TooltipProvider></ThemeProvider></ErrorBoundary>;
 }
 
 export default App;
