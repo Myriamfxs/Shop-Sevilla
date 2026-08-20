@@ -1,5 +1,11 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Clasificar las afirmaciones proporcionadas en información apta, pendiente de validar o no apta para la web.
+- [x] Incorporar las fotografías reales de aceites y cosmética como visuales de producto.
+- [x] Añadir contenido comercial verificable para aceites, cosmética y accesorios de sabor sin alegaciones terapéuticas no verificadas.
+- [x] Añadir un formulario de consulta de disponibilidad con datos de contacto, categoría y mensaje.
+- [x] Indicar claramente que la consulta no constituye una compra online y enlazar la política de privacidad.
+- [x] Enviar el resumen de cada consulta al WhatsApp comercial 634 205 061.
 - [x] Sustituir el copy de visita y ambiente por mensajes comerciales centrados en categorías y selección de productos.
 - [x] Mantener las categorías reales sin inventar referencias, precios, efectos o fichas no aportadas.
 - [x] Reorientar la identidad visual hacia madera, verde ácido, luz cálida y códigos urbanos inspirados en el interior real.

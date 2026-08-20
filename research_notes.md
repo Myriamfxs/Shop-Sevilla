@@ -65,3 +65,11 @@ El texto consolidado de la Ley 34/2002, de servicios de la sociedad de la inform
 La política de privacidad identificará al responsable, describirá de forma limitada las finalidades web que efectivamente se implementan y recogerá los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad, junto con la posibilidad de reclamar ante la AEPD. La visita directa a la página de derechos de la AEPD quedó bloqueada por sus sistemas, por lo que no se extraerá ningún contenido adicional de esa sesión.
 
 Fuentes: https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758 · https://www.aepd.es/derechos-y-deberes/ejerce-tus-derechos
+
+## 9. Productos CBD, alimentación y cosmética
+
+La AESAN publicó que la EFSA no podía establecer la seguridad del cannabidiol (CBD) como nuevo alimento por falta de datos e incertidumbres sobre los posibles riesgos derivados de la ingesta. La fuente explica que la Comisión Europea considera que el CBD podría ser un nuevo alimento si cumple los requisitos de la legislación de nuevos alimentos. Por ello, la web no debe describir aceites, dulces, galletas, chocolates, refrescos, snacks ni suplementos con CBD como alimentos de bienestar, ni atribuirles efectos sobre sueño, ansiedad, dolor, estrés o bienestar psicológico sin una validación específica.
+
+El boletín de la AEMPS sobre cosméticos recoge la vigilancia de productos cosméticos, el control de sustancias y una referencia a una ponencia sobre CBD; sirve como recordatorio de que los productos cosméticos deben mantenerse dentro de su categoría y sus reivindicaciones deben apoyarse en la documentación del producto. Para la landing se usarán descripciones de uso cosmético que figuren en el etiquetado (por ejemplo, cuidado de piel, cabello, labios o masaje) y se excluirán afirmaciones de tratamiento de acné, dolor muscular o articular, propiedades anticonvulsivas, ansiolíticas o para el sueño.
+
+Fuentes: https://www.aesan.gob.es/AECOSAN/web/noticias_y_actualizaciones/noticias/2022/cannabidiol.htm · https://www.aemps.gob.es/informa/boletin-trimestral-sobre-cosmeticos-biocidas-aemps-y-productos-de-cuidado-personal-enero-marzo-2023/

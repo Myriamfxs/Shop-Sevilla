@@ -2,12 +2,13 @@
  * Diseño: Vitrina urbana. La landing recoge madera cálida, luz verde y energía de pizarra del interior real;
  * muestra categorías y atención presencial sin precios, claims de salud ni detalles de producto no confirmados.
  */
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
   ChevronDown,
   Menu,
+  MessageCircle,
   PackageOpen,
   Search,
   Sparkles,
@@ -18,6 +19,8 @@ import {
 const assets = {
   hero: "/manus-storage/the-cannabis-shop-interior_b3c16ce0.jpeg",
   interior: "/manus-storage/the-cannabis-shop-interior_b3c16ce0.jpeg",
+  cosmeticsOils: "/manus-storage/the-cannabis-shop-cosmetica-aceites_edd43117.jpeg",
+  cbdOils: "/manus-storage/the-cannabis-shop-aceites-cbd-vitrina_d53925e2.jpeg",
   logo: "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png",
 };
 
@@ -47,6 +50,20 @@ function SectionLabel({ children, inverse = false }: { children: React.ReactNode
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [availabilityForm, setAvailabilityForm] = useState({ name: "", contact: "", category: "Cosmética", message: "" });
+
+  const sendAvailabilityQuery = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const query = [
+      "Hola, quiero consultar disponibilidad de productos en The Cannabis Shop.",
+      "",
+      `Nombre: ${availabilityForm.name}`,
+      `Contacto: ${availabilityForm.contact}`,
+      `Categoría: ${availabilityForm.category}`,
+      availabilityForm.message ? `Consulta: ${availabilityForm.message}` : "",
+    ].filter(Boolean).join("\n");
+    window.open(`https://wa.me/34634205061?text=${encodeURIComponent(query)}`, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f0e8db] text-[#2d1c18]">
@@ -56,7 +73,7 @@ export default function Home() {
           <nav className="hidden items-center gap-7 text-[0.69rem] font-extrabold uppercase tracking-[0.16em] text-[#f5ecdf] lg:flex" aria-label="Navegación principal">
             <a href="#seleccion">Selección</a><a href="#categorias">Categorías</a><a href="#servicios">La tienda</a><a href="#preguntas">Preguntas</a>
           </nav>
-          <a className="header-link hidden lg:inline-flex" href="#categorias">Explorar categorías <ArrowDownRight size={15} /></a>
+          <a className="header-link hidden lg:inline-flex" href="#consulta">Consultar disponibilidad <ArrowDownRight size={15} /></a>
           <button className="menu-button lg:hidden" type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} onClick={() => setMenuOpen((isOpen) => !isOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
         </div>
         {menuOpen && <nav className="mobile-menu" aria-label="Navegación móvil">{[["Selección", "#seleccion"], ["Categorías", "#categorias"], ["La tienda", "#servicios"], ["Preguntas", "#preguntas"]].map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
@@ -86,7 +103,27 @@ export default function Home() {
             <p className="max-w-[595px] text-[1.05rem] leading-7 text-[#654e47] lg:mb-2 lg:justify-self-end">Explora las categorías que encontrarás en la tienda. Localiza lo que buscas, consulta las referencias disponibles y completa tu compra en el local.</p>
           </div>
           <div id="categorias" className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => <article className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#servicios" aria-label={`Consultar ${category.title} en tienda`}>Consultar en tienda <ArrowUpRight size={16} /></a></div></article>)}
+            {categories.map((category) => <article className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#consulta" aria-label={`Consultar disponibilidad de ${category.title}`}>Consultar disponibilidad <ArrowUpRight size={16} /></a></div></article>)}
+          </div>
+        </section>
+
+        <section className="product-spotlight px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="oils-heading">
+          <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
+            <div className="self-start lg:sticky lg:top-12">
+              <SectionLabel>Aceites y cosmética</SectionLabel>
+              <h2 id="oils-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3.1rem,5.4vw,6.1rem)] leading-[.86] tracking-[-.07em]">Selección real, desde la vitrina.</h2>
+              <p className="mt-7 max-w-[430px] text-[1.03rem] leading-7 text-[#624c45]">Explora aceites de la selección, aceites de masaje y referencias de cuidado para piel, cabello y uñas. Consulta en tienda las presentaciones y la disponibilidad actual.</p>
+              <a className="inline-category-link mt-9" href="#consulta">Consultar disponibilidad de aceites <ArrowUpRight size={17} /></a>
+            </div>
+            <div className="product-visual-grid">
+              <figure className="product-real-photo product-real-photo-primary"><img src={assets.cbdOils} alt="Selección de aceites de CBD en distintos envases de colores" /><figcaption>Aceites de la selección de tienda</figcaption></figure>
+              <figure className="product-real-photo product-real-photo-secondary"><img src={assets.cosmeticsOils} alt="Aceites de masaje y cuidado personal en una vitrina" /><figcaption>Masaje y cuidado personal</figcaption></figure>
+            </div>
+          </div>
+          <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#d8c3aa] md:grid-cols-3">
+            <article className="product-info-card"><span>01</span><h3 className="display-heading">Aceites de la selección</h3><p>Consulta las referencias etiquetadas y las presentaciones disponibles en la vitrina.</p></article>
+            <article className="product-info-card"><span>02</span><h3 className="display-heading">Masaje y cuidado</h3><p>Aceites de masaje y productos de cuidado para explorar dentro de la categoría cosmética.</p></article>
+            <article className="product-info-card"><span>03</span><h3 className="display-heading">Piel, cabello y uñas</h3><p>Referencias de cuidado personal cuya presentación y uso se confirman directamente en tienda.</p></article>
           </div>
         </section>
 
@@ -120,8 +157,31 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="consulta" className="availability-section px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="availability-heading">
+          <div className="mx-auto grid max-w-[1160px] gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
+            <div className="self-start lg:sticky lg:top-12">
+              <SectionLabel inverse>Consulta de disponibilidad</SectionLabel>
+              <h2 id="availability-heading" className="display-heading mt-5 max-w-[480px] text-[clamp(3.2rem,5.7vw,6.2rem)] leading-[.86] tracking-[-.07em] text-[#ffcf34]">¿Buscas algo concreto?</h2>
+              <p className="mt-7 max-w-[430px] text-[1.02rem] leading-7 text-[#e7d6c7]">Cuéntanos qué producto necesitas y prepara tu consulta para WhatsApp. Te responderemos sobre la disponibilidad de la selección en tienda.</p>
+              <div className="availability-whatsapp-note"><MessageCircle size={19} /><span>Las consultas se abren en WhatsApp con el número comercial de la tienda.</span></div>
+            </div>
+            <form className="availability-form" onSubmit={sendAvailabilityQuery}>
+              <div className="availability-form-top"><span>THE CANNABIS SHOP</span><span>DISPONIBILIDAD</span></div>
+              <div className="availability-fields">
+                <label>Tu nombre<input required name="name" value={availabilityForm.name} onChange={(event) => setAvailabilityForm({ ...availabilityForm, name: event.target.value })} placeholder="Escribe tu nombre" /></label>
+                <label>Tu WhatsApp o email<input required name="contact" value={availabilityForm.contact} onChange={(event) => setAvailabilityForm({ ...availabilityForm, contact: event.target.value })} placeholder="Para responderte" /></label>
+                <label className="availability-full">Categoría de interés<select name="category" value={availabilityForm.category} onChange={(event) => setAvailabilityForm({ ...availabilityForm, category: event.target.value })}><option>Cosmética</option><option>Aceites & extractos</option><option>Vaporizadores</option><option>Accesorios & gadgets</option><option>Semillas</option><option>Selección de tienda</option><option>Otra categoría</option></select></label>
+                <label className="availability-full">¿Qué producto buscas?<textarea name="message" value={availabilityForm.message} onChange={(event) => setAvailabilityForm({ ...availabilityForm, message: event.target.value })} placeholder="Escribe la marca, producto o referencia que quieres consultar" rows={4} /></label>
+              </div>
+              <label className="privacy-check"><input required type="checkbox" /><span>He leído la <a href="/privacy">Política de Privacidad</a> y autorizo el envío de esta consulta por WhatsApp.</span></label>
+              <button className="availability-submit" type="submit"><MessageCircle size={18} /> Enviar consulta por WhatsApp</button>
+              <p className="availability-disclaimer">Este formulario no realiza ninguna compra ni reserva. Al enviarlo se abrirá WhatsApp con tu consulta preparada.</p>
+            </form>
+          </div>
+        </section>
+
         <section className="closing-product px-5 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">Descubre nuestra selección.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías, consulta la disponibilidad y compra tus productos directamente en The Cannabis Shop.</p><a className="button-gold mt-10" href="#categorias">Ver productos <ArrowUpRight size={17} /></a></div>
+          <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">Descubre nuestra selección.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías, consulta la disponibilidad y compra tus productos directamente en The Cannabis Shop.</p><a className="button-gold mt-10" href="#consulta">Consultar disponibilidad <ArrowUpRight size={17} /></a></div>
         </section>
       </main>
 
