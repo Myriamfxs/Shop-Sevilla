@@ -1,5 +1,7 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Añadir animaciones de entrada para los bloques principales y las fotografías de producto.
+- [x] Añadir microinteracciones a tarjetas, botones y formulario respetando la reducción de movimiento.
 - [x] Excluir las alegaciones de dolor, ansiedad, sueño, antioxidante y anticonvulsivo de los aceites.
 - [x] Reemplazarlas por información objetiva de formato, etiqueta, categoría y consulta de referencia.
 - [x] Incorporar las subcategorías aptas de cosmética al bloque de catálogo en preparación.

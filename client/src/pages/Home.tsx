@@ -2,7 +2,7 @@
  * Diseño: Vitrina urbana. La landing recoge madera cálida, luz verde y energía de pizarra del interior real;
  * muestra categorías y atención presencial sin precios, claims de salud ni detalles de producto no confirmados.
  */
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -52,6 +52,27 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [availabilityForm, setAvailabilityForm] = useState({ name: "", contact: "", category: "Cosmética", message: "" });
 
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) return;
+
+    document.documentElement.classList.add("motion-ready");
+    const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    elements.forEach((element) => observer.observe(element));
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("motion-ready");
+    };
+  }, []);
+
   const sendAvailabilityQuery = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const query = [
@@ -97,17 +118,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="seleccion" className="bg-[#f0e8db] px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="selection-heading">
+        <section id="seleccion" data-reveal className="bg-[#f0e8db] px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="selection-heading">
           <div className="mx-auto grid max-w-[1240px] gap-10 lg:grid-cols-[0.73fr_1.27fr] lg:items-end">
             <div><SectionLabel>Nuestros productos</SectionLabel><h2 id="selection-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3rem,5.4vw,6rem)] leading-[0.87] tracking-[-0.06em]">Productos para descubrir.</h2></div>
             <p className="max-w-[595px] text-[1.05rem] leading-7 text-[#654e47] lg:mb-2 lg:justify-self-end">Explora las categorías que encontrarás en la tienda. Localiza lo que buscas, consulta las referencias disponibles y completa tu compra en el local.</p>
           </div>
           <div id="categorias" className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => <article className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#consulta" aria-label={`Consultar disponibilidad de ${category.title}`}>Consultar disponibilidad <ArrowUpRight size={16} /></a></div></article>)}
+            {categories.map((category) => <article data-reveal className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#consulta" aria-label={`Consultar disponibilidad de ${category.title}`}>Consultar disponibilidad <ArrowUpRight size={16} /></a></div></article>)}
           </div>
         </section>
 
-        <section className="product-spotlight px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="oils-heading">
+        <section data-reveal className="product-spotlight px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="oils-heading">
           <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
             <div className="self-start lg:sticky lg:top-12">
               <SectionLabel>Aceites y cosmética</SectionLabel>
@@ -116,8 +137,8 @@ export default function Home() {
               <a className="inline-category-link mt-9" href="#consulta">Preguntar por una referencia <ArrowUpRight size={17} /></a>
             </div>
             <div className="product-visual-grid">
-              <figure className="product-real-photo product-real-photo-primary"><img src={assets.cbdOils} alt="Selección de aceites de CBD en distintos envases de colores" /><figcaption>Fichas de aceites en preparación</figcaption></figure>
-              <figure className="product-real-photo product-real-photo-secondary"><img src={assets.cosmeticsOils} alt="Aceites de masaje y cuidado personal en una vitrina" /><figcaption>Cosmética en preparación</figcaption></figure>
+              <figure data-reveal className="product-real-photo product-real-photo-primary"><img src={assets.cbdOils} alt="Selección de aceites de CBD en distintos envases de colores" /><figcaption>Fichas de aceites en preparación</figcaption></figure>
+              <figure data-reveal className="product-real-photo product-real-photo-secondary"><img src={assets.cosmeticsOils} alt="Aceites de masaje y cuidado personal en una vitrina" /><figcaption>Cosmética en preparación</figcaption></figure>
             </div>
           </div>
           <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#d8c3aa] md:grid-cols-3">
@@ -133,7 +154,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="servicios" className="relative overflow-hidden bg-[#2f1c18] px-5 py-20 text-[#f1e8da] lg:px-10 lg:py-28" aria-labelledby="services-heading">
+        <section id="servicios" data-reveal className="relative overflow-hidden bg-[#2f1c18] px-5 py-20 text-[#f1e8da] lg:px-10 lg:py-28" aria-labelledby="services-heading">
           <div className="service-ghost" aria-hidden="true">PASA</div>
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
             <div><SectionLabel inverse>Catálogo en preparación</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Estamos preparando las fichas.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">El catálogo detallado está en preparación. Estamos reuniendo fotografías, formatos y descripciones de cada categoría antes de mostrarlas en la web.</p></div>
@@ -148,14 +169,14 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="product-feature px-5 py-20 lg:px-10 lg:py-28">
+        <section data-reveal className="product-feature px-5 py-20 lg:px-10 lg:py-28">
           <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1.06fr_0.94fr] lg:gap-20">
             <div className="feature-selection-board" aria-label="Muestrario de categorías de tienda"><div className="feature-board-head"><span>THE CANNABIS SHOP</span><span>SELECCIÓN</span></div><p className="feature-board-title display-heading">Lo ves.<br />Lo preguntas.</p><div className="feature-board-grid"><span>Cosmética</span><span>Aceites & extractos</span><span>Vaporizadores</span><span>Accesorios</span><span>Semillas</span><span>Selección de tienda</span></div><div className="feature-board-foot"><i aria-hidden="true">✦</i><span>Consulta presencial · Sevilla</span></div></div>
             <div className="self-center"><SectionLabel>THE CANNABIS SHOP</SectionLabel><h2 className="display-heading mt-5 max-w-[510px] text-[clamp(3rem,5.1vw,5.85rem)] leading-[0.88] tracking-[-0.06em]">Productos para tu selección.</h2><p className="mt-7 max-w-[510px] text-[1.05rem] leading-7 text-[#654e47]">Recorre las categorías y encuentra cosmética, aceites y extractos, vaporizadores, accesorios, semillas y novedades disponibles en tienda.</p><a className="inline-category-link mt-9" href="#categorias">Ver todos los productos <ArrowUpRight size={17} /></a></div>
           </div>
         </section>
 
-        <section id="preguntas" className="relative overflow-hidden bg-[#e6ddce] px-5 py-20 text-[#2f1c18] lg:px-10 lg:py-28" aria-labelledby="faq-heading">
+        <section id="preguntas" data-reveal className="relative overflow-hidden bg-[#e6ddce] px-5 py-20 text-[#2f1c18] lg:px-10 lg:py-28" aria-labelledby="faq-heading">
           <div className="faq-grid-pattern" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
             <div><SectionLabel>Preguntas frecuentes</SectionLabel><h2 id="faq-heading" className="display-heading mt-5 max-w-[460px] text-[clamp(3rem,5.2vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Encuentra lo que buscas.</h2><p className="mt-7 max-w-[400px] text-[1rem] leading-7 text-[#513221]">Si buscas un producto concreto, consulta la disponibilidad y las referencias actuales directamente en nuestra tienda.</p></div>
@@ -163,7 +184,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="consulta" className="availability-section px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="availability-heading">
+        <section id="consulta" data-reveal className="availability-section px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="availability-heading">
           <div className="mx-auto grid max-w-[1160px] gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
             <div className="self-start lg:sticky lg:top-12">
               <SectionLabel inverse>Consulta de disponibilidad</SectionLabel>
@@ -171,7 +192,7 @@ export default function Home() {
               <p className="mt-7 max-w-[430px] text-[1.02rem] leading-7 text-[#e7d6c7]">Cuéntanos qué producto necesitas y prepara tu consulta para WhatsApp. Te responderemos sobre la disponibilidad de la selección en tienda.</p>
               <div className="availability-whatsapp-note"><MessageCircle size={19} /><span>Las consultas se abren en WhatsApp con el número comercial de la tienda.</span></div>
             </div>
-            <form className="availability-form" onSubmit={sendAvailabilityQuery}>
+            <form data-reveal className="availability-form" onSubmit={sendAvailabilityQuery}>
               <div className="availability-form-top"><span>THE CANNABIS SHOP</span><span>DISPONIBILIDAD</span></div>
               <div className="availability-fields">
                 <label>Tu nombre<input required name="name" value={availabilityForm.name} onChange={(event) => setAvailabilityForm({ ...availabilityForm, name: event.target.value })} placeholder="Escribe tu nombre" /></label>
@@ -186,7 +207,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="closing-product px-5 py-20 lg:px-10 lg:py-28">
+        <section data-reveal className="closing-product px-5 py-20 lg:px-10 lg:py-28">
           <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">Descubre nuestra selección.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías, consulta la disponibilidad y compra tus productos directamente en The Cannabis Shop.</p><a className="button-gold mt-10" href="#consulta">Consultar disponibilidad <ArrowUpRight size={17} /></a></div>
         </section>
       </main>
