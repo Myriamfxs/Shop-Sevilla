@@ -1,5 +1,8 @@
 # Revisión de The Cannabis Shop Sevilla
 
+- [x] Cambiar el rótulo de cabecera a “En frente de la Catedral de Sevilla”.
+- [x] Regenerar el paquete ZIP de Hostinger con el acceso flotante de WhatsApp y todos los cambios recientes.
+- [x] Verificar que el ZIP conserva imágenes locales, `.htaccess` y las rutas legales.
 - [x] Añadir un botón flotante de WhatsApp con enlace al número 634 205 061.
 - [x] Garantizar que sea accesible y no interfiera con el aviso de cookies ni el formulario en escritorio y móvil.
 - [x] Añadir un efecto de reflejo de vitrina al hero y a los visuales principales.

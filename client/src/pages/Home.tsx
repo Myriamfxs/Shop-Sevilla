@@ -105,7 +105,7 @@ export default function Home() {
           <div className="product-hero-texture" aria-hidden="true" />
           <img className="product-hero-image" src={assets.hero} alt="Interior real de The Cannabis Shop con vitrinas, iluminación cálida y mural verde" />
           <div className="product-hero-shade" />
-          <p className="hero-neon-tag" aria-hidden="true">Tienda real · luz verde · Sevilla</p>
+          <p className="hero-neon-tag" aria-hidden="true">En frente de la Catedral de Sevilla</p>
           <div className="hero-counter-display" aria-hidden="true"><span className="counter-object counter-jar" /><span className="counter-object counter-bottle" /><span className="counter-object counter-case" /><p>Vitrina · selección · consulta</p></div>
           <div className="relative mx-auto grid min-h-[760px] max-w-[1440px] px-5 pb-10 pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:pb-14 lg:pt-36">
             <div className="self-end">
