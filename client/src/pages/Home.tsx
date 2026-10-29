@@ -38,6 +38,7 @@ const categories = [
   { id: "06", title: "Alimentación y bebidas", tag: "Categoría", object: "jar", text: "Dulces, chocolates, repostería, bebidas e infusiones con revisión previa.", tone: "mahogany" },
   { id: "07", title: "Ropa y regalos", tag: "Categoría", object: "case", text: "Ropa, complementos, regalos, souvenirs, velas e incienso.", tone: "gold" },
   { id: "08", title: "Selección de tienda", tag: "Novedades", object: "device", text: "Consulta en el local las referencias disponibles y su documentación actual.", tone: "green" },
+  { id: "09", title: "Artículos para mascotas", tag: "Categoría", object: "bottle", text: "Referencia para animales pendiente de revisión y clasificación de fichas.", tone: "ivory" },
 ];
 
 const inventory = [
@@ -48,6 +49,7 @@ const inventory = [
   { category: "Cosmética y cuidado", subcategories: "Facial · Corporal · Capilar · Masaje · Solar y after sun · Higiene", stock: "Cremas, sérum, bálsamos, aceites de masaje, champú y otros productos clasificados tras revisar sus fichas" },
   { category: "Alimentación y bebidas", subcategories: "Dulces y chocolates · Repostería · Bebidas e infusiones", stock: "Alimentación y bebidas, con revisión previa de cada referencia" },
   { category: "Ropa y regalos", subcategories: "Ropa y complementos · Regalos y souvenirs · Ambiente", stock: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso" },
+  { category: "Artículos para mascotas", subcategories: "Línea animales · Referencias pendientes de revisión", stock: "Productos para mascotas pendientes de clasificación y revisión de sus fichas" },
 ];
 
 const faqs = [
@@ -129,8 +131,8 @@ export default function Home() {
           <div className="relative mx-auto grid min-h-[760px] max-w-[1440px] px-5 pb-10 pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:pb-14 lg:pt-36">
             <div className="self-end">
               <SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel>
-              <h1 id="hero-heading" className="product-hero-heading mt-6">Productos.<br />Accesorios.<em>Selección.</em></h1>
-              <p className="mt-7 max-w-[530px] text-[1.05rem] leading-7 text-[#f1e8da] lg:text-[1.15rem]">Encuentra cosmética, aceites y extractos, vaporizadores, accesorios, semillas y más. Explora la selección disponible y compra tus productos en The Cannabis Shop · Sevilla.</p>
+              <h1 id="hero-heading" className="product-hero-heading mt-6">Tienda CBD<em>en Sevilla.</em></h1>
+              <p className="mt-7 max-w-[560px] text-[1.05rem] leading-7 text-[#f1e8da] lg:text-[1.15rem]">Tu tienda de CBD en el centro de Sevilla, justo frente a la catedral. Descubre cosmética, aceites y extractos, vaporizadores, accesorios, semillas y más en Avenida Constitución 30, con atención en tienda y venta presencial.</p>
               <div className="mt-9 flex flex-wrap gap-4"><a className="button-gold" href="#categorias">Ver productos <ArrowDownRight size={18} /></a><a className="text-link-light" href="#servicios">Conocer la selección <ArrowUpRight size={16} /></a></div>
             </div>
             <aside className="hero-selection-note self-end lg:justify-self-end"><Sparkles size={18} strokeWidth={1.8} /><p>Categorías de producto para comprar en tienda. Consulta la disponibilidad de cada referencia en el local.</p></aside>
@@ -220,7 +222,7 @@ export default function Home() {
               <div className="availability-fields">
                 <label>Tu nombre<input required name="name" value={availabilityForm.name} onChange={(event) => setAvailabilityForm({ ...availabilityForm, name: event.target.value })} placeholder="Escribe tu nombre" /></label>
                 <label>Tu WhatsApp o email<input required name="contact" value={availabilityForm.contact} onChange={(event) => setAvailabilityForm({ ...availabilityForm, contact: event.target.value })} placeholder="Para responderte" /></label>
-                <label className="availability-full">Categoría de interés<select name="category" value={availabilityForm.category} onChange={(event) => setAvailabilityForm({ ...availabilityForm, category: event.target.value })}><option>Cosmética</option><option>Aceites & extractos</option><option>Vaporizadores</option><option>Accesorios & gadgets</option><option>Semillas</option><option>Selección de tienda</option><option>Otra categoría</option></select></label>
+                <label className="availability-full">Categoría de interés<select name="category" value={availabilityForm.category} onChange={(event) => setAvailabilityForm({ ...availabilityForm, category: event.target.value })}><option>Cosmética</option><option>Aceites & extractos</option><option>Vaporizadores</option><option>Accesorios & gadgets</option><option>Semillas</option><option>Artículos para mascotas</option><option>Selección de tienda</option><option>Otra categoría</option></select></label>
                 <label className="availability-full">¿Qué producto buscas?<textarea name="message" value={availabilityForm.message} onChange={(event) => setAvailabilityForm({ ...availabilityForm, message: event.target.value })} placeholder="Escribe la marca, producto o referencia que quieres consultar" rows={4} /></label>
               </div>
               <label className="privacy-check"><input required type="checkbox" /><span>He leído la <a href="/privacy">Política de Privacidad</a> y autorizo el envío de esta consulta por WhatsApp.</span></label>
