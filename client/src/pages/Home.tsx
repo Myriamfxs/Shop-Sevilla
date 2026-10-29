@@ -30,12 +30,24 @@ const assets = {
 };
 
 const categories = [
-  { id: "01", title: "Cosmética", tag: "Productos", object: "bottle", text: "Cuidado corporal, facial, capilar, labial y otras referencias de la selección de tienda.", tone: "mahogany" },
-  { id: "02", title: "Aceites & extractos", tag: "Productos", object: "dropper", text: "Explora las referencias disponibles de esta categoría en el establecimiento.", tone: "gold" },
-  { id: "03", title: "Vaporizadores", tag: "Productos", object: "device", text: "Encuentra dispositivos y complementos de la categoría disponibles en tienda.", tone: "green" },
-  { id: "04", title: "Accesorios & gadgets", tag: "Accesorios", object: "case", text: "Complementos y objetos para completar tu selección de productos.", tone: "ivory" },
-  { id: "05", title: "Semillas", tag: "Productos", object: "packet", text: "Consulta las referencias de semillas presentes en la selección actual.", tone: "ivory" },
-  { id: "06", title: "Selección de tienda", tag: "Novedades", object: "jar", text: "Descubre novedades y productos destacados disponibles en el local.", tone: "mahogany" },
+  { id: "01", title: "Flores y resinas", tag: "Categoría", object: "jar", text: "Flores, resinas y extractos, además de preenrollados. Referencias sujetas a revisión documental.", tone: "mahogany" },
+  { id: "02", title: "Aceites", tag: "Categoría", object: "dropper", text: "Aceites del 2,5% al 30% y una línea para animales pendiente de revisión.", tone: "gold" },
+  { id: "03", title: "Semillas", tag: "Categoría", object: "packet", text: "Las nueve referencias de semillas visibles en la selección de tienda.", tone: "green" },
+  { id: "04", title: "Accesorios", tag: "Categoría", object: "case", text: "Grinders, pipas, bongs, vaporizadores, baterías, papeles, filtros y complementos.", tone: "ivory" },
+  { id: "05", title: "Cosmética y cuidado", tag: "Categoría", object: "bottle", text: "Facial, corporal, capilar, masaje, solar, after sun e higiene.", tone: "ivory" },
+  { id: "06", title: "Alimentación y bebidas", tag: "Categoría", object: "jar", text: "Dulces, chocolates, repostería, bebidas e infusiones con revisión previa.", tone: "mahogany" },
+  { id: "07", title: "Ropa y regalos", tag: "Categoría", object: "case", text: "Ropa, complementos, regalos, souvenirs, velas e incienso.", tone: "gold" },
+  { id: "08", title: "Selección de tienda", tag: "Novedades", object: "device", text: "Consulta en el local las referencias disponibles y su documentación actual.", tone: "green" },
+];
+
+const inventory = [
+  { category: "Flores y resinas", subcategories: "Flores · Resinas y extractos · Preenrollados", stock: "Flores, joint/porro, Pollen, Afgano, Charas Gold, Crumble y Wax" },
+  { category: "Aceites", subcategories: "Por concentración · Línea animales (pendiente de revisión)", stock: "Aceites del 2,5% al 30% y referencia para animales" },
+  { category: "Semillas", subcategories: "Listado por variedad", stock: "Las nueve referencias de semillas visibles" },
+  { category: "Accesorios", subcategories: "Grinders · Pipas y bongs · Vaporizadores y baterías · Mecheros y complementos · Papeles, conos y filtros · Bandejas y ceniceros", stock: "Fumadores, papeles y tips, y parte de merchandising" },
+  { category: "Cosmética y cuidado", subcategories: "Facial · Corporal · Capilar · Masaje · Solar y after sun · Higiene", stock: "Cremas, sérum, bálsamos, aceites de masaje, champú y otros productos clasificados tras revisar sus fichas" },
+  { category: "Alimentación y bebidas", subcategories: "Dulces y chocolates · Repostería · Bebidas e infusiones", stock: "Alimentación y bebidas, con revisión previa de cada referencia" },
+  { category: "Ropa y regalos", subcategories: "Ropa y complementos · Regalos y souvenirs · Ambiente", stock: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso" },
 ];
 
 const faqs = [
@@ -99,8 +111,11 @@ export default function Home() {
           <nav className="hidden items-center gap-7 text-[0.69rem] font-extrabold uppercase tracking-[0.16em] text-[#f5ecdf] lg:flex" aria-label="Navegación principal">
             <a href="#seleccion">Selección</a><a href="#categorias">Categorías</a><a href="#servicios">La tienda</a><a href="#preguntas">Preguntas</a>
           </nav>
-          <a className="header-link hidden lg:inline-flex" href="#consulta">Consultar disponibilidad <ArrowDownRight size={15} /></a>
-          <button className="menu-button lg:hidden" type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} onClick={() => setMenuOpen((isOpen) => !isOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
+          <div className="header-actions">
+            <a className="header-call" href="tel:+34954118908" aria-label="Llamar a The Cannabis Shop Sevilla"><Phone size={15} /><span className="hidden sm:inline">954 118 908</span></a>
+            <a className="header-link hidden lg:inline-flex" href="#consulta">Consultar disponibilidad <ArrowDownRight size={15} /></a>
+            <button className="menu-button lg:hidden" type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} onClick={() => setMenuOpen((isOpen) => !isOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
+          </div>
         </div>
         {menuOpen && <nav className="mobile-menu" aria-label="Navegación móvil">{[["Selección", "#seleccion"], ["Categorías", "#categorias"], ["La tienda", "#servicios"], ["Preguntas", "#preguntas"]].map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
       </header>
@@ -129,6 +144,10 @@ export default function Home() {
           </div>
           <div id="categorias" className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => <article data-reveal className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#consulta" aria-label={`Consultar disponibilidad de ${category.title}`}>Consultar disponibilidad <ArrowUpRight size={16} /></a></div></article>)}
+          </div>
+          <div className="inventory-panel mx-auto mt-16 max-w-[1240px]" aria-labelledby="inventory-heading">
+            <div className="inventory-panel-heading"><div><SectionLabel>Organización de stock</SectionLabel><h3 id="inventory-heading" className="display-heading">Qué se vende por categoría.</h3></div><p>Listado orientativo para ordenar la selección del establecimiento. Las referencias se muestran tras revisar su ficha y disponibilidad.</p></div>
+            <div className="inventory-table-wrap"><table className="inventory-table"><thead><tr><th scope="col">Categoría</th><th scope="col">Subcategorías</th><th scope="col">Listado de stock</th></tr></thead><tbody>{inventory.map((item) => <tr key={item.category}><th scope="row">{item.category}</th><td>{item.subcategories}</td><td>{item.stock}</td></tr>)}</tbody></table></div>
           </div>
         </section>
 
@@ -238,6 +257,7 @@ export default function Home() {
             <a className="arrival-contact-item arrival-contact-item-green" href="https://wa.me/34634205061" target="_blank" rel="noreferrer"><MessageCircle size={20} /><span>WhatsApp</span><strong>634 205 061</strong></a>
             <a className="arrival-contact-item" href="mailto:cannabissevilla@lavetia.es"><Mail size={20} /><span>Email</span><strong>cannabissevilla@lavetia.es</strong></a>
           </div>
+          <div className="relative mx-auto mt-8 max-w-[1240px]"><div className="store-hours"><div><SectionLabel inverse>Horario comercial</SectionLabel><p className="store-hours-note">Consulta el horario que corresponde a la temporada antes de venir.</p></div><div className="hours-grid"><div><span>Horario de verano</span><strong>10:00 — 22:00</strong></div><div><span>Horario de invierno</span><strong>10:00 — 21:00</strong></div></div></div></div>
         </section>
       </main>
 
