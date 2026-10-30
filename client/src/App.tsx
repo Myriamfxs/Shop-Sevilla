@@ -10,10 +10,11 @@ import Cookies from "./pages/Cookies";
 import Privacy from "./pages/Privacy";
 import LegalNotice from "./pages/LegalNotice";
 import Home from "./pages/Home";
+import Products from "./pages/Products";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 
 function Router() {
-  return <Switch><Route path="/" component={Home} /><Route path="/cookies" component={Cookies} /><Route path="/privacy" component={Privacy} /><Route path="/aviso-legal" component={LegalNotice} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
+  return <Switch><Route path="/" component={Home} /><Route path="/productos" component={Products} /><Route path="/cookies" component={Cookies} /><Route path="/privacy" component={Privacy} /><Route path="/aviso-legal" component={LegalNotice} /><Route path="/404" component={NotFound} /><Route component={NotFound} /></Switch>;
 }
 
 function App() {

@@ -111,7 +111,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 lg:px-10">
           <StoreMark inverse />
           <nav className="hidden items-center gap-7 text-[0.69rem] font-extrabold uppercase tracking-[0.16em] text-[#f5ecdf] lg:flex" aria-label="Navegación principal">
-            <a href="#seleccion">Selección</a><a href="#categorias">Categorías</a><a href="#servicios">La tienda</a><a href="#preguntas">Preguntas</a>
+            <a href="/productos">Productos</a><a href="#categorias">Categorías</a><a href="#servicios">La tienda</a><a href="#preguntas">Preguntas</a>
           </nav>
           <div className="header-actions">
             <a className="header-call" href="tel:+34954118908" aria-label="Llamar a The Cannabis Shop Sevilla"><Phone size={15} /><span className="hidden sm:inline">954 118 908</span></a>
@@ -119,7 +119,7 @@ export default function Home() {
             <button className="menu-button lg:hidden" type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} onClick={() => setMenuOpen((isOpen) => !isOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
           </div>
         </div>
-        {menuOpen && <nav className="mobile-menu" aria-label="Navegación móvil">{[["Selección", "#seleccion"], ["Categorías", "#categorias"], ["La tienda", "#servicios"], ["Preguntas", "#preguntas"]].map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
+        {menuOpen && <nav className="mobile-menu" aria-label="Navegación móvil">{[["Productos", "/productos"], ["Categorías", "#categorias"], ["La tienda", "#servicios"], ["Preguntas", "#preguntas"]].map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
       </header>
 
       <main>
@@ -133,7 +133,7 @@ export default function Home() {
               <SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel>
               <h1 id="hero-heading" className="product-hero-heading mt-6">Tienda CBD<em>en Sevilla.</em></h1>
               <p className="mt-7 max-w-[560px] text-[1.05rem] leading-7 text-[#f1e8da] lg:text-[1.15rem]">Tu tienda de CBD en el centro de Sevilla, justo frente a la catedral. Descubre cosmética, aceites y extractos, vaporizadores, accesorios, semillas y más en Avenida Constitución 30, con atención en tienda y venta presencial.</p>
-              <div className="mt-9 flex flex-wrap gap-4"><a className="button-gold" href="#categorias">Ver productos <ArrowDownRight size={18} /></a><a className="text-link-light" href="#servicios">Conocer la selección <ArrowUpRight size={16} /></a></div>
+              <div className="mt-9 flex flex-wrap gap-4"><a className="button-gold" href="/productos">Ver productos <ArrowDownRight size={18} /></a><a className="text-link-light" href="#servicios">Conocer la selección <ArrowUpRight size={16} /></a></div>
             </div>
             <aside className="hero-selection-note self-end lg:justify-self-end"><Sparkles size={18} strokeWidth={1.8} /><p>Categorías de producto para comprar en tienda. Consulta la disponibilidad de cada referencia en el local.</p></aside>
           </div>
@@ -150,32 +150,6 @@ export default function Home() {
           <div className="inventory-panel mx-auto mt-16 max-w-[1240px]" aria-labelledby="inventory-heading">
             <div className="inventory-panel-heading"><div><SectionLabel>Organización de stock</SectionLabel><h3 id="inventory-heading" className="display-heading">Qué se vende por categoría.</h3></div><p>Listado orientativo para ordenar la selección del establecimiento. Las referencias se muestran tras revisar su ficha y disponibilidad.</p></div>
             <div className="inventory-table-wrap"><table className="inventory-table"><thead><tr><th scope="col">Categoría</th><th scope="col">Subcategorías</th><th scope="col">Listado de stock</th></tr></thead><tbody>{inventory.map((item) => <tr key={item.category}><th scope="row">{item.category}</th><td>{item.subcategories}</td><td>{item.stock}</td></tr>)}</tbody></table></div>
-          </div>
-        </section>
-
-        <section data-reveal className="product-spotlight px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="oils-heading">
-          <div className="mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[.78fr_1.22fr] lg:gap-20">
-            <div className="self-start lg:sticky lg:top-12">
-              <SectionLabel>Aceites y cosmética</SectionLabel>
-              <h2 id="oils-heading" className="display-heading mt-5 max-w-[470px] text-[clamp(3.1rem,5.4vw,6.1rem)] leading-[.86] tracking-[-.07em]">La vitrina adelanta lo que viene.</h2>
-              <p className="mt-7 max-w-[430px] text-[1.03rem] leading-7 text-[#624c45]">Estamos preparando las fichas de aceites de CBD y aceites de cuidado. De momento, estas fotografías muestran parte de la selección real de la tienda y los formatos que iremos documentando.</p>
-              <a className="inline-category-link mt-9" href="#consulta">Preguntar por una referencia <ArrowUpRight size={17} /></a>
-            </div>
-            <div className="product-visual-grid">
-              <figure data-reveal className="product-real-photo product-real-photo-primary"><img src={assets.cbdOils} alt="Selección de aceites de CBD en distintos envases de colores" /><figcaption>Fichas de aceites en preparación</figcaption></figure>
-              <figure data-reveal className="product-real-photo product-real-photo-secondary"><img src={assets.cosmeticsOils} alt="Aceites de masaje y cuidado personal en una vitrina" /><figcaption>Cosmética en preparación</figcaption></figure>
-            </div>
-          </div>
-          <div className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#d8c3aa] md:grid-cols-3">
-            <article className="product-info-card"><span>01</span><h3 className="display-heading">Aceites</h3><p>Próximamente: fichas con marca, formato y la información que figure en cada envase.</p></article>
-            <article className="product-info-card"><span>02</span><h3 className="display-heading">Masaje y cuidado</h3><p>Próximamente: referencias de cosmética y cuidado personal documentadas por categoría.</p></article>
-            <article className="product-info-card"><span>03</span><h3 className="display-heading">Aromas y formatos</h3><p>Próximamente: presentaciones de la selección, siempre a partir del etiquetado confirmado.</p></article>
-          </div>
-          <div className="cosmetic-subcategories mx-auto max-w-[1240px]">
-            <div><SectionLabel>Cosmética en preparación</SectionLabel><p>Estas subcategorías formarán parte de las fichas de cosmética cuando terminemos de documentar cada referencia.</p></div>
-            <ul aria-label="Subcategorías de cosmética">
-              <li>Cuidado corporal y masaje</li><li>Cuidado facial y contorno de ojos</li><li>Cuidado solar y aftersun</li><li>Cuidado capilar</li><li>Cuidado labial</li><li>Cuidado íntimo</li>
-            </ul>
           </div>
         </section>
 
