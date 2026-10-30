@@ -191,10 +191,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section data-reveal className="closing-product px-5 py-20 lg:px-10 lg:py-28">
-          <div className="mx-auto max-w-[940px] text-center"><SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel><h2 className="display-heading mt-6 text-[clamp(3.2rem,6.5vw,7.05rem)] leading-[0.84] tracking-[-0.07em] text-[#d9a934]">Descubre nuestra selección.</h2><p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías, consulta la disponibilidad y compra tus productos directamente en The Cannabis Shop.</p><a className="button-gold mt-10" href="#consulta">Consultar disponibilidad <ArrowUpRight size={17} /></a></div>
-        </section>
-
         <section id="ubicacion" data-reveal className="arrival-marker arrival-marker-final px-5 py-20 lg:px-10 lg:py-28" aria-labelledby="arrival-heading">
           <div className="arrival-dots" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-20">
