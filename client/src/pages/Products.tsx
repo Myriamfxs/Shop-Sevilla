@@ -13,13 +13,15 @@ function SectionLabel({ children, inverse = false }: { children: React.ReactNode
 }
 
 type ProductImage = { src: string; alt: string; title: string; caption: string };
-type ProductGroup = { id: string; title: string; intro: string; images: ProductImage[] };
+type ProductGroup = { id: string; title: string; intro: string; subcategories: string[]; detail: string; images: ProductImage[] };
 
 const productGroups: ProductGroup[] = [
   {
     id: "flores-resinas",
     title: "Flores y resinas",
-    intro: "Selección de flores, polen, resinas y extractos presentada en tienda. Consulta la disponibilidad actual y la información de cada referencia.",
+    intro: "Selección de flores, joint/porro, Pollen, Afgano, Charas Gold, Crumble y Wax.",
+    subcategories: ["Flores", "Resinas y extractos", "Preenrollados"],
+    detail: "Flores, joint/porro, Pollen, Afgano, Charas Gold, Crumble y Wax.",
     images: [
       { src: "/manus-storage/flores-cbd-sevilla_1180dadc.webp", alt: "Flores de CBD disponibles en The Cannabis Shop Sevilla", title: "Flores", caption: "Referencia de flores" },
       { src: "/manus-storage/polen-cbd-sevilla_c886cca8.webp", alt: "Polen de CBD de la selección de The Cannabis Shop Sevilla", title: "Polen", caption: "Referencia de polen" },
@@ -28,7 +30,9 @@ const productGroups: ProductGroup[] = [
   {
     id: "aceites",
     title: "Aceites",
-    intro: "Aceites y extractos en distintos formatos y concentraciones. La información final se consulta en el etiquetado de cada producto.",
+    intro: "Aceites y extractos en distintos formatos y concentraciones, con referencias para animales pendientes de revisión.",
+    subcategories: ["Por concentración", "Línea animales", "Referencias pendientes de revisión"],
+    detail: "Aceites del 2,5% al 30% y una referencia para animales, pendiente de revisión de su ficha.",
     images: [
       { src: "/manus-storage/aceites-cbd-sevilla-01_4af54541.webp", alt: "Aceites de CBD en vitrina de The Cannabis Shop Sevilla", title: "Aceites · selección 01", caption: "Aceites y extractos" },
       { src: "/manus-storage/aceites-cbd-sevilla-02_81298e6b.webp", alt: "Selección de aceites de CBD en distintos envases", title: "Aceites · selección 02", caption: "Formatos en tienda" },
@@ -38,30 +42,38 @@ const productGroups: ProductGroup[] = [
   {
     id: "cosmetica-cuidado",
     title: "Cosmética y cuidado",
-    intro: "Cremas, sérum, bálsamos, aceites de masaje, champú y otras referencias de cuidado personal pendientes de clasificación por ficha.",
+    intro: "Cuidado personal organizado por zonas y tipos de producto, con las referencias clasificadas progresivamente.",
+    subcategories: ["Cuidado corporal y masaje", "Facial y contorno de ojos", "Solar y aftersun", "Cuidado capilar", "Cuidado labial", "Cuidado íntimo"],
+    detail: "Cremas, bálsamos, sérums, aceites de masaje, productos capilares, solares e higiene personal.",
     images: [{ src: "/manus-storage/cosmetica-cbd-sevilla_894237ad.webp", alt: "Cosmética y productos de cuidado con CBD en Sevilla", title: "Cosmética y cuidado", caption: "Cuidado personal" }],
   },
   {
     id: "vaporizadores",
     title: "Vaporizadores y baterías",
-    intro: "Dispositivos y complementos de vapeo visibles en la selección actual de la tienda física.",
+    intro: "Dispositivos y complementos para vaporización organizados por formato y accesorio.",
+    subcategories: ["Vaporizadores", "Baterías", "E-liquids y resinas"],
+    detail: "Vaporizadores, baterías y referencias de e-liquids o resinas, según disponibilidad y revisión de cada ficha.",
     images: [{ src: "/manus-storage/vaporizadores-cbd-sevilla_26196a98.webp", alt: "Vaporizadores y dispositivos disponibles en The Cannabis Shop Sevilla", title: "Vaporizadores", caption: "Dispositivos y baterías" }],
   },
   {
     id: "semillas",
     title: "Semillas",
-    intro: "Consulta las referencias de semillas presentes en tienda y la información disponible para cada variedad.",
+    intro: "Listado por variedad para consultar las nueve referencias de semillas visibles en tienda.",
+    subcategories: ["Listado por variedad", "Nueve referencias visibles"],
+    detail: "Las nueve referencias de semillas visibles, pendientes de incorporar con su nombre y ficha individual.",
     images: [{ src: "/manus-storage/semillas-cbd-sevilla_73bed883.webp", alt: "Selección de semillas en The Cannabis Shop Sevilla", title: "Semillas", caption: "Referencias por variedad" }],
   },
   {
     id: "alimentacion-bebidas",
     title: "Alimentación y bebidas",
-    intro: "Selección de alimentación y bebidas pendiente de revisión individual de cada referencia y su etiquetado.",
+    intro: "Familia de alimentación y bebidas organizada por tipo, con revisión previa de cada referencia.",
+    subcategories: ["Dulces y chocolates", "Repostería", "Bebidas e infusiones"],
+    detail: "Alimentación y bebidas, con revisión previa de cada referencia y de la información de su envase.",
     images: [{ src: "/manus-storage/alimentacion-bebidas-cbd-sevilla_4d937dba.webp", alt: "Alimentación y bebidas de la selección de The Cannabis Shop Sevilla", title: "Alimentación y bebidas", caption: "Referencias en revisión" }],
   },
-  { id: "accesorios", title: "Accesorios", intro: "Grinders, pipas, bongs, mecheros, papeles, conos, filtros, bandejas y ceniceros. Añadiremos las fotografías de cada familia progresivamente.", images: [] },
-  { id: "ropa-regalos", title: "Ropa y regalos", intro: "Ropa, complementos, regalos, souvenirs, velas e incienso. Galería pendiente de nuevas fotografías.", images: [] },
-  { id: "mascotas", title: "Artículos para mascotas", intro: "Línea para animales pendiente de revisión y clasificación de sus fichas. Añadiremos las referencias cuando estén documentadas.", images: [] },
+  { id: "accesorios", title: "Accesorios", intro: "Accesorios para completar la selección de tienda, organizados por uso y formato.", subcategories: ["Grinders", "Pipas y bongs", "Vaporizadores y baterías", "Mecheros y complementos", "Papeles, conos y filtros", "Bandejas y ceniceros"], detail: "Fumadores, papeles y tips, además de parte del merchandising disponible en tienda.", images: [] },
+  { id: "ropa-regalos", title: "Ropa y regalos", intro: "Ropa, complementos, regalos y objetos de ambiente para llevar o regalar.", subcategories: ["Ropa y complementos", "Regalos y souvenirs", "Ambiente"], detail: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso.", images: [] },
+  { id: "mascotas", title: "Artículos para mascotas", intro: "Línea para animales pendiente de revisión y clasificación de sus fichas.", subcategories: ["Línea animales", "Referencias pendientes de revisión"], detail: "Productos para mascotas pendientes de documentar y clasificar por referencia.", images: [] },
 ];
 
 export default function Products() {
@@ -85,7 +97,7 @@ export default function Products() {
       </section>
 
       <section className="products-catalog px-5 py-16 lg:px-10 lg:py-24" aria-label="Catálogo por categorías">
-        <div className="mx-auto max-w-[1240px]">{productGroups.map((group, index) => <section className="product-group" id={group.id} key={group.id} aria-labelledby={`${group.id}-heading`}><div className="product-group-heading"><div><SectionLabel>{String(index + 1).padStart(2, "0")} · Categoría</SectionLabel><h2 id={`${group.id}-heading`} className="display-heading">{group.title}</h2></div><p>{group.intro}</p></div>{group.images.length > 0 ? <div className={`product-gallery product-gallery-${Math.min(group.images.length, 3)}`}>{group.images.map((image) => <figure className="product-photo-card" key={image.src}><div className="product-photo-wrap"><img loading="lazy" src={image.src} alt={image.alt} /><span className="product-photo-mark">The Cannabis Shop</span></div><figcaption><strong>{image.title}</strong><span>{image.caption}</span></figcaption></figure>)}</div> : <div className="product-empty"><span>Fotos en preparación</span><strong>Próximamente añadiremos las referencias de esta categoría.</strong><a href="/#consulta">Preguntar por disponibilidad <ArrowUpRight size={16} /></a></div>}</section>)}</div>
+        <div className="mx-auto max-w-[1240px]">{productGroups.map((group, index) => <section className="product-group" id={group.id} key={group.id} aria-labelledby={`${group.id}-heading`}><div className="product-group-heading"><div><SectionLabel>{String(index + 1).padStart(2, "0")} · Categoría</SectionLabel><h2 id={`${group.id}-heading`} className="display-heading">{group.title}</h2></div><p>{group.intro}</p></div><div className="product-details"><div className="product-subcategories" aria-label={`Subcategorías de ${group.title}`}>{group.subcategories.map((subcategory) => <span key={subcategory}>{subcategory}</span>)}</div><p className="product-detail-copy"><strong>Artículos:</strong> {group.detail}</p></div>{group.images.length > 0 ? <div className={`product-gallery product-gallery-${Math.min(group.images.length, 3)}`}>{group.images.map((image) => <figure className="product-photo-card" key={image.src}><div className="product-photo-wrap"><img loading="lazy" src={image.src} alt={image.alt} /><span className="product-photo-mark">The Cannabis Shop</span></div><figcaption><strong>{image.title}</strong><span>{image.caption}</span></figcaption></figure>)}</div> : <div className="product-empty"><span>Fotos en preparación</span><strong>Próximamente añadiremos las referencias fotográficas de esta categoría.</strong><a href="/#consulta">Preguntar por disponibilidad <ArrowUpRight size={16} /></a></div>}</section>)}</div>
       </section>
 
       <section className="products-contact px-5 py-16 lg:px-10 lg:py-24"><div className="mx-auto grid max-w-[1100px] gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-end"><div><SectionLabel inverse>Consulta en tienda</SectionLabel><h2 className="display-heading mt-5">¿Buscas una referencia concreta?</h2><p>Las fotografías muestran parte de la selección actual. Para confirmar una referencia, formato o disponibilidad, escríbenos antes de venir.</p></div><div className="products-contact-actions"><a href="https://wa.me/34634205061" target="_blank" rel="noreferrer"><MessageCircle size={18} /> Consultar por WhatsApp</a><a href="mailto:cannabissevilla@lavetia.es"><Mail size={18} /> Enviar un email</a></div></div></section>
