@@ -100,7 +100,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-4 lg:px-10">
           <StoreMark inverse />
           <nav className="hidden items-center gap-7 text-[0.69rem] font-extrabold uppercase tracking-[0.16em] text-[#f5ecdf] lg:flex" aria-label="Navegación principal">
-            <a href="/productos">Productos</a><a href="#categorias">Categorías</a><a href="#servicios">La tienda</a><a href="#preguntas">Preguntas</a>
+            <a href="#ubicacion">La Tienda</a><a href="#categorias">Categorías</a><a href="/productos">Productos</a><a href="#preguntas">Preguntas</a>
           </nav>
           <div className="header-actions">
             <a className="header-call" href="tel:+34954118908" aria-label="Llamar a The Cannabis Shop Sevilla"><Phone size={15} /><span className="hidden sm:inline">954 118 908</span></a>
@@ -108,7 +108,7 @@ export default function Home() {
             <button className="menu-button lg:hidden" type="button" aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen} onClick={() => setMenuOpen((isOpen) => !isOpen)}>{menuOpen ? <X size={22} /> : <Menu size={22} />}</button>
           </div>
         </div>
-        {menuOpen && <nav className="mobile-menu" aria-label="Navegación móvil">{[["Productos", "/productos"], ["Categorías", "#categorias"], ["La tienda", "#servicios"], ["Preguntas", "#preguntas"]].map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
+        {menuOpen && <nav className="mobile-menu" aria-label="Navegación móvil">{[["La Tienda", "#ubicacion"], ["Categorías", "#categorias"], ["Productos", "/productos"], ["Preguntas", "#preguntas"]].map(([label, href]) => <a href={href} key={href} onClick={() => setMenuOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}</nav>}
       </header>
 
       <main>
@@ -116,7 +116,7 @@ export default function Home() {
           <div className="product-hero-texture" aria-hidden="true" />
           <img className="product-hero-image" src={assets.hero} alt="Interior real de The Cannabis Shop con vitrinas, iluminación cálida y mural verde" />
           <div className="product-hero-shade" />
-          <p className="hero-neon-tag" aria-hidden="true">En frente de la Catedral de Sevilla</p>
+          <p className="hero-neon-tag" aria-hidden="true">Frente de la Catedral de Sevilla</p>
           <div className="relative mx-auto grid min-h-[760px] max-w-[1440px] px-5 pb-10 pt-32 lg:grid-cols-[1.02fr_0.98fr] lg:px-10 lg:pb-14 lg:pt-36">
             <div className="self-end">
               <SectionLabel inverse>THE CANNABIS SHOP · SEVILLA</SectionLabel>
@@ -134,7 +134,7 @@ export default function Home() {
             <p className="max-w-[595px] text-[1.05rem] leading-7 text-[#654e47] lg:mb-2 lg:justify-self-end">Explora las categorías que encontrarás en la tienda. Localiza lo que buscas, consulta las referencias disponibles y completa tu compra en el local.</p>
           </div>
           <div id="categorias" className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((category) => <article data-reveal className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#consulta" aria-label={`Consultar disponibilidad de ${category.title}`}>Consultar disponibilidad <ArrowUpRight size={16} /></a></div></article>)}
+            {categories.map((category) => <article data-reveal className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href={`/productos#${category.id}`} aria-label={`Consultar los productos de ${category.title}`}>Consulta los productos <ArrowUpRight size={16} /></a></div></article>)}
           </div>
         </section>
 
