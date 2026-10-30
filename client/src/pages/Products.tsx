@@ -38,6 +38,7 @@ const productGroups: ProductGroup[] = [
       { src: "/assets/aceites-cbd-sevilla-seleccion-01.webp", alt: "Aceites de CBD en vitrina de The Cannabis Shop Sevilla", title: "Aceites · selección 01", caption: "Aceites y extractos" },
       { src: "/assets/aceites-cbd-sevilla-seleccion-02.webp", alt: "Selección de aceites de CBD en distintos envases", title: "Aceites · selección 02", caption: "Formatos en tienda" },
       { src: "/assets/aceites-cbd-sevilla-seleccion-03.webp", alt: "Aceites de CBD de la selección de tienda en Sevilla", title: "Aceites · selección 03", caption: "Referencias disponibles" },
+      { src: "/assets/extracto-cbd-sevilla.webp", alt: "Botellas de extracto CBD expuestas en The Cannabis Shop Sevilla", title: "Extracto CBD", caption: "Extractos" },
     ],
   },
   {
@@ -46,7 +47,12 @@ const productGroups: ProductGroup[] = [
     intro: "Cosmética y productos de cuidado para incorporar a tu rutina diaria.",
     subcategories: ["Cuidado corporal y masaje", "Facial y contorno de ojos", "Solar y aftersun", "Cuidado capilar", "Cuidado labial", "Cuidado íntimo"],
     detail: "Cremas, bálsamos, sérums, aceites de masaje, productos capilares, solares e higiene personal.",
-    images: [{ src: "/assets/cosmetica-cbd-sevilla.webp", alt: "Cosmética y productos de cuidado con CBD en The Cannabis Shop Sevilla", title: "Cosmética y cuidado", caption: "Cuidado personal" }],
+    images: [
+      { src: "/assets/cosmetica-cbd-sevilla.webp", alt: "Cosmética y productos de cuidado con CBD en The Cannabis Shop Sevilla", title: "Cosmética y cuidado", caption: "Cuidado personal" },
+      { src: "/assets/cosmetica-general-sevilla.webp", alt: "Cosmética general expuesta en The Cannabis Shop Sevilla", title: "Cosmética general", caption: "Cuidado corporal y facial" },
+      { src: "/assets/shower-cream-body-cream-hand-cream-portada-sevilla.webp", alt: "Shower cream, body cream y hand cream en The Cannabis Shop Sevilla", title: "Shower cream · body cream · hand cream", caption: "Cosmética corporal" },
+      { src: "/assets/shower-cream-body-cream-hand-cream-sevilla.webp", alt: "Shower cream, body cream y hand cream expuestos en tienda", title: "Shower cream · body cream · hand cream", caption: "Selección de cremas" },
+    ],
   },
   {
     id: "vaporizadores",
@@ -54,7 +60,10 @@ const productGroups: ProductGroup[] = [
     intro: "Dispositivos y complementos para vaporización disponibles en tienda.",
     subcategories: ["Vaporizadores", "Baterías", "E-liquids y resinas"],
     detail: "Vaporizadores, baterías, e-liquids y resinas.",
-    images: [{ src: "/assets/vaporizadores-cbd-sevilla.webp", alt: "Vaporizadores y dispositivos disponibles en The Cannabis Shop Sevilla", title: "Vaporizadores", caption: "Dispositivos y baterías" }],
+    images: [
+      { src: "/assets/vaporizadores-cbd-sevilla.webp", alt: "Vaporizadores y dispositivos disponibles en The Cannabis Shop Sevilla", title: "Vaporizadores", caption: "Dispositivos y baterías" },
+      { src: "/assets/vapers-sevilla.webp", alt: "Vapers y accesorios expuestos en The Cannabis Shop Sevilla", title: "Vapers", caption: "Vapers y accesorios" },
+    ],
   },
   {
     id: "semillas",
@@ -70,10 +79,16 @@ const productGroups: ProductGroup[] = [
     intro: "Productos de alimentación y bebidas de la selección de tienda.",
     subcategories: ["Dulces y chocolates", "Repostería", "Bebidas e infusiones"],
     detail: "Dulces, chocolates, repostería, bebidas e infusiones.",
-    images: [{ src: "/assets/alimentacion-bebidas-cbd-sevilla.webp", alt: "Alimentación y bebidas de la selección de The Cannabis Shop Sevilla", title: "Alimentación y bebidas", caption: "Selección de tienda" }],
+    images: [
+      { src: "/assets/alimentacion-bebidas-cbd-sevilla.webp", alt: "Alimentación y bebidas de la selección de The Cannabis Shop Sevilla", title: "Alimentación y bebidas", caption: "Selección de tienda" },
+      { src: "/assets/beer-cbd-sevilla.webp", alt: "Beer CBD y bebidas de la selección de The Cannabis Shop Sevilla", title: "Beer CBD", caption: "Bebidas" },
+      { src: "/assets/brownie-sevilla.webp", alt: "Brownie de la selección de alimentación de The Cannabis Shop Sevilla", title: "Brownie", caption: "Dulces y repostería" },
+      { src: "/assets/cannabis-lolly-sevilla.webp", alt: "Cannabis lolly de la selección de dulces de The Cannabis Shop Sevilla", title: "Cannabis lolly", caption: "Dulces" },
+      { src: "/assets/apple-mushroom-dulce-sevilla.webp", alt: "Apple Mushroom de la selección de dulces de The Cannabis Shop Sevilla", title: "Apple Mushroom", caption: "Dulces" },
+    ],
   },
-  { id: "accesorios", title: "Accesorios para fumadores", intro: "Encuentra Grinders, pipas, bongs, mecheros, papeles, filtros, conos, bandejas y ceniceros.", subcategories: ["Grinders", "Pipas y bongs", "Mecheros", "Papeles, filtros y conos", "Bandejas y ceniceros"], detail: "Grinders, pipas, bongs, mecheros, papeles, filtros, conos, bandejas y ceniceros.", images: [] },
-  { id: "ropa-regalos", title: "Ropa y regalos", intro: "Ropa, complementos y regalos disponibles en tienda.", subcategories: ["Ropa y complementos", "Regalos y souvenirs", "Ambiente"], detail: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso.", images: [] },
+  { id: "accesorios", title: "Accesorios para fumadores", intro: "Encuentra Grinders, pipas, bongs, mecheros, papeles, filtros, conos, bandejas y ceniceros.", subcategories: ["Grinders", "Pipas y bongs", "Mecheros", "Papeles, filtros y conos", "Bandejas y ceniceros"], detail: "Grinders, pipas, bongs, mecheros, papeles, filtros, conos, bandejas y ceniceros.", images: [{ src: "/assets/taza-desayuno-sevilla.webp", alt: "Taza desayuno de The Cannabis Shop Sevilla entre los artículos de regalo", title: "Taza desayuno", caption: "Regalos y detalles" }] },
+  { id: "ropa-regalos", title: "Ropa y regalos", intro: "Ropa, complementos y regalos disponibles en tienda.", subcategories: ["Ropa y complementos", "Regalos y souvenirs", "Ambiente"], detail: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso.", images: [{ src: "/assets/ropa-sevilla.webp", alt: "Ropa expuesta en The Cannabis Shop Sevilla", title: "Ropa", caption: "Camisetas y complementos" }, { src: "/assets/inciensos-cbd-sevilla.webp", alt: "Inciensos CBD de The Cannabis Shop Sevilla", title: "Inciensos CBD", caption: "Ambiente y regalos" }] },
   { id: "mascotas", title: "Artículos para mascotas", intro: "Selección de artículos para mascotas disponible en tienda.", subcategories: ["Artículos para mascotas"], detail: "Productos y accesorios para mascotas disponibles en tienda.", images: [] },
 ];
 
@@ -89,11 +104,15 @@ export default function Products() {
     </header>
 
     <main>
-      <section className="products-hero px-5 pb-16 pt-36 lg:px-10 lg:pb-24 lg:pt-48" aria-labelledby="products-heading">
-        <div className="products-hero-texture" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-[1240px] gap-12 lg:grid-cols-[1fr_.72fr] lg:items-end">
-          <div><SectionLabel>Catálogo de tienda · Sevilla</SectionLabel><h1 id="products-heading" className="products-title mt-6">Productos.<br /><em>Selección.</em></h1><p className="products-lead">Explora la selección de The Cannabis Shop, agrupada por categoría. Consulta cada referencia directamente en tienda.</p><a className="products-back-link" href="/"><ArrowLeft size={16} /> Volver a la portada</a></div>
-          <aside className="products-hero-note"><MapPin size={19} /><p>Estamos en Avenida Constitución 30, frente a la Catedral de Sevilla. Atención y venta presencial.</p></aside>
+      <section className="products-catalog-header closing-product px-5 py-24 lg:px-10 lg:py-36" aria-labelledby="products-heading">
+        <div className="products-catalog-header-inner mx-auto max-w-[1240px]">
+          <div className="products-catalog-header-label"><SectionLabel inverse>CATÁLOGO DE TIENDA · SEVILLA</SectionLabel></div>
+          <div className="products-catalog-header-main">
+            <h1 id="products-heading" className="products-title products-catalog-title">Productos.<br /><em>Selección.</em></h1>
+            <p className="mx-auto mt-7 max-w-[560px] text-[1.04rem] leading-7 text-[#eadfd1]">Explora las categorías de The Cannabis Shop, consulta las referencias disponibles y encuentra tus productos en nuestra tienda física frente a la Catedral de Sevilla.</p>
+          </div>
+          <a className="products-back-link products-catalog-header-back" href="/"><ArrowLeft size={16} /> Volver a la portada</a>
+          <aside className="products-catalog-header-note"><MapPin size={19} /><p>Estamos en Avenida Constitución 30, frente a la Catedral de Sevilla. Atención y venta presencial.</p></aside>
         </div>
       </section>
 
