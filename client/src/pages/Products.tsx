@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { ArrowLeft, ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import "./products.css";
 
-const logo = "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png";
+const logo = "/assets/logo-the-cannabis-shop-hemp-brothers-sevilla.png";
 
 function StoreMark({ inverse = false }: { inverse?: boolean }) {
   return <a className={`store-mark ${inverse ? "store-mark-inverse" : ""}`} href="/" aria-label="Ir al inicio de The Cannabis Shop"><img src={logo} alt="Logotipo de The Cannabis Shop by Hemp Brothers" /><span className="store-wordmark"><small>The Cannabis</small><strong>Shop</strong><em>Sevilla</em></span></a>;
@@ -23,8 +23,9 @@ const productGroups: ProductGroup[] = [
     subcategories: ["Flores", "Resinas y extractos", "Preenrollados"],
     detail: "Flores, joint/porro, Pollen, Afgano, Charas Gold, Crumble y Wax.",
     images: [
-      { src: "/manus-storage/flores-cbd-sevilla_1180dadc.webp", alt: "Flores de CBD disponibles en The Cannabis Shop Sevilla", title: "Flores", caption: "Referencia de flores" },
-      { src: "/manus-storage/polen-cbd-sevilla_c886cca8.webp", alt: "Polen de CBD de la selección de The Cannabis Shop Sevilla", title: "Polen", caption: "Referencia de polen" },
+      { src: "/assets/flores-cbd-sevilla.webp", alt: "Flores de CBD en bandeja en The Cannabis Shop Sevilla", title: "Flores", caption: "Selección de flores" },
+      { src: "/assets/flores-cbd-sevilla-seleccion-02.webp", alt: "Flores y accesorios de fumador en la tienda de CBD de Sevilla", title: "Flores · selección 02", caption: "Presentación en tienda" },
+      { src: "/assets/polen-cbd-sevilla.webp", alt: "Polen de CBD de la selección de The Cannabis Shop Sevilla", title: "Polen", caption: "Selección de polen" },
     ],
   },
   {
@@ -34,9 +35,9 @@ const productGroups: ProductGroup[] = [
     subcategories: ["Por concentración", "Aceites CBD", "Extractos"],
     detail: "Aceites de CBD en concentraciones del 2,5% al 30%, en distintos formatos.",
     images: [
-      { src: "/manus-storage/aceites-cbd-sevilla-01_4af54541.webp", alt: "Aceites de CBD en vitrina de The Cannabis Shop Sevilla", title: "Aceites · selección 01", caption: "Aceites y extractos" },
-      { src: "/manus-storage/aceites-cbd-sevilla-02_81298e6b.webp", alt: "Selección de aceites de CBD en distintos envases", title: "Aceites · selección 02", caption: "Formatos en tienda" },
-      { src: "/manus-storage/aceites-cbd-sevilla-03_e2543bcb.webp", alt: "Aceites de CBD de la selección de tienda en Sevilla", title: "Aceites · selección 03", caption: "Referencias disponibles" },
+      { src: "/assets/aceites-cbd-sevilla-seleccion-01.webp", alt: "Aceites de CBD en vitrina de The Cannabis Shop Sevilla", title: "Aceites · selección 01", caption: "Aceites y extractos" },
+      { src: "/assets/aceites-cbd-sevilla-seleccion-02.webp", alt: "Selección de aceites de CBD en distintos envases", title: "Aceites · selección 02", caption: "Formatos en tienda" },
+      { src: "/assets/aceites-cbd-sevilla-seleccion-03.webp", alt: "Aceites de CBD de la selección de tienda en Sevilla", title: "Aceites · selección 03", caption: "Referencias disponibles" },
     ],
   },
   {
@@ -45,7 +46,7 @@ const productGroups: ProductGroup[] = [
     intro: "Cosmética y productos de cuidado para incorporar a tu rutina diaria.",
     subcategories: ["Cuidado corporal y masaje", "Facial y contorno de ojos", "Solar y aftersun", "Cuidado capilar", "Cuidado labial", "Cuidado íntimo"],
     detail: "Cremas, bálsamos, sérums, aceites de masaje, productos capilares, solares e higiene personal.",
-    images: [{ src: "/manus-storage/cosmetica-cbd-sevilla_894237ad.webp", alt: "Cosmética y productos de cuidado con CBD en Sevilla", title: "Cosmética y cuidado", caption: "Cuidado personal" }],
+    images: [{ src: "/assets/cosmetica-cbd-sevilla.webp", alt: "Cosmética y productos de cuidado con CBD en The Cannabis Shop Sevilla", title: "Cosmética y cuidado", caption: "Cuidado personal" }],
   },
   {
     id: "vaporizadores",
@@ -53,7 +54,7 @@ const productGroups: ProductGroup[] = [
     intro: "Dispositivos y complementos para vaporización disponibles en tienda.",
     subcategories: ["Vaporizadores", "Baterías", "E-liquids y resinas"],
     detail: "Vaporizadores, baterías, e-liquids y resinas.",
-    images: [{ src: "/manus-storage/vaporizadores-cbd-sevilla_26196a98.webp", alt: "Vaporizadores y dispositivos disponibles en The Cannabis Shop Sevilla", title: "Vaporizadores", caption: "Dispositivos y baterías" }],
+    images: [{ src: "/assets/vaporizadores-cbd-sevilla.webp", alt: "Vaporizadores y dispositivos disponibles en The Cannabis Shop Sevilla", title: "Vaporizadores", caption: "Dispositivos y baterías" }],
   },
   {
     id: "semillas",
@@ -61,7 +62,7 @@ const productGroups: ProductGroup[] = [
     intro: "Semillas disponibles en distintas variedades para consultar en tienda.",
     subcategories: ["Variedades disponibles en tienda"],
     detail: "Selección de semillas en distintas variedades y formatos.",
-    images: [{ src: "/manus-storage/semillas-cbd-sevilla_73bed883.webp", alt: "Selección de semillas en The Cannabis Shop Sevilla", title: "Semillas", caption: "Referencias por variedad" }],
+    images: [{ src: "/assets/semillas-cbd-sevilla.webp", alt: "Selección de semillas en The Cannabis Shop Sevilla", title: "Semillas", caption: "Referencias por variedad" }],
   },
   {
     id: "alimentacion-bebidas",
@@ -69,7 +70,7 @@ const productGroups: ProductGroup[] = [
     intro: "Productos de alimentación y bebidas de la selección de tienda.",
     subcategories: ["Dulces y chocolates", "Repostería", "Bebidas e infusiones"],
     detail: "Dulces, chocolates, repostería, bebidas e infusiones.",
-    images: [{ src: "/manus-storage/alimentacion-bebidas-cbd-sevilla_4d937dba.webp", alt: "Alimentación y bebidas de la selección de The Cannabis Shop Sevilla", title: "Alimentación y bebidas", caption: "Selección de tienda" }],
+    images: [{ src: "/assets/alimentacion-bebidas-cbd-sevilla.webp", alt: "Alimentación y bebidas de la selección de The Cannabis Shop Sevilla", title: "Alimentación y bebidas", caption: "Selección de tienda" }],
   },
   { id: "accesorios", title: "Accesorios para fumadores", intro: "Encuentra Grinders, pipas, bongs, mecheros, papeles, filtros, conos, bandejas y ceniceros.", subcategories: ["Grinders", "Pipas y bongs", "Mecheros", "Papeles, filtros y conos", "Bandejas y ceniceros"], detail: "Grinders, pipas, bongs, mecheros, papeles, filtros, conos, bandejas y ceniceros.", images: [] },
   { id: "ropa-regalos", title: "Ropa y regalos", intro: "Ropa, complementos y regalos disponibles en tienda.", subcategories: ["Ropa y complementos", "Regalos y souvenirs", "Ambiente"], detail: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso.", images: [] },

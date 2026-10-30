@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { useEffect, useState } from "react";
 import { readCookiePreferences, saveCookiePreferences } from "@/lib/cookieConsent";
 
-const logoUrl = "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png";
+const logoUrl = "/assets/logo-the-cannabis-shop-hemp-brothers-sevilla.png";
 
 export default function Cookies() {
   const [analytics, setAnalytics] = useState(false);

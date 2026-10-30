@@ -2,7 +2,7 @@
 import { ArrowLeft, ExternalLink, Landmark } from "lucide-react";
 import { Link } from "wouter";
 
-const logoUrl = "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png";
+const logoUrl = "/assets/logo-the-cannabis-shop-hemp-brothers-sevilla.png";
 
 function LegalFooter() {
   return (
