@@ -21,12 +21,12 @@ import {
 } from "lucide-react";
 
 const assets = {
-  hero: "/manus-storage/the-cannabis-shop-interior_b3c16ce0.jpeg",
-  interior: "/manus-storage/the-cannabis-shop-interior_b3c16ce0.jpeg",
-  cosmeticsOils: "/manus-storage/the-cannabis-shop-cosmetica-aceites_edd43117.jpeg",
-  cbdOils: "/manus-storage/the-cannabis-shop-aceites-cbd-vitrina_d53925e2.jpeg",
-  entrance: "/manus-storage/the-cannabis-shop-entrada-catedral_b1ac7b5a.jpeg",
-  logo: "/manus-storage/the-cannabis-shop-hemp-brothers-logo_44a74b59.png",
+  hero: "/assets/interior-tienda-cbd-sevilla.webp",
+  interior: "/assets/interior-tienda-cbd-sevilla.webp",
+  cosmeticsOils: "/assets/cosmetica-cbd-sevilla-seleccion-02.webp",
+  cbdOils: "/assets/aceites-cbd-sevilla-seleccion-01.webp",
+  entrance: "/assets/entrada-tienda-cbd-catedral-sevilla.webp",
+  logo: "/assets/logo-the-cannabis-shop-hemp-brothers-sevilla.png",
 };
 
 const categories = [
