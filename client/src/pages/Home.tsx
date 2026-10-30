@@ -201,7 +201,7 @@ export default function Home() {
             <div className="arrival-copy">
               <SectionLabel inverse>Ven a conocernos</SectionLabel>
               <p className="arrival-kicker"><MapPin size={16} /> Frente a la Catedral de Sevilla</p>
-              <h2 id="arrival-heading" className="display-heading">La puerta está en Avenida Constitución, 30.</h2>
+              <h2 id="arrival-heading" className="display-heading">Ven a conocernos frente a la Catedral de Sevilla.</h2>
               <p>Encuentra The Cannabis Shop en pleno centro de Sevilla. Guarda la dirección, abre la ruta o llámanos antes de pasar por la tienda.</p>
               <div className="arrival-route-actions">
                 <a className="arrival-map-button" href="https://maps.app.goo.gl/ANst3eEmqenoE7gE6" target="_blank" rel="noreferrer"><MapPin size={17} /> Abrir en Google Maps</a>
