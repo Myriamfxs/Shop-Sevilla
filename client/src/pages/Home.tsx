@@ -30,26 +30,15 @@ const assets = {
 };
 
 const categories = [
-  { id: "01", title: "Flores y resinas", tag: "Categoría", object: "jar", text: "Flores, resinas y extractos, además de preenrollados. Referencias sujetas a revisión documental.", tone: "mahogany" },
-  { id: "02", title: "Aceites", tag: "Categoría", object: "dropper", text: "Aceites del 2,5% al 30% y una línea para animales pendiente de revisión.", tone: "gold" },
-  { id: "03", title: "Semillas", tag: "Categoría", object: "packet", text: "Las nueve referencias de semillas visibles en la selección de tienda.", tone: "green" },
+  { id: "01", title: "Flores y resinas", tag: "Categoría", object: "jar", text: "Flores, resinas y extractos, además de preenrollados. Selección de flores, resinas y extractos para consultar en tienda.", tone: "mahogany" },
+  { id: "02", title: "Aceites", tag: "Categoría", object: "dropper", text: "Aceites del 2,5% al 30% y formatos de aceites y opciones para animales disponibles en tienda.", tone: "gold" },
+  { id: "03", title: "Semillas", tag: "Categoría", object: "packet", text: "Variedades de semillas seleccionadas para consultar en tienda.", tone: "green" },
   { id: "04", title: "Accesorios", tag: "Categoría", object: "case", text: "Grinders, pipas, bongs, vaporizadores, baterías, papeles, filtros y complementos.", tone: "ivory" },
   { id: "05", title: "Cosmética y cuidado", tag: "Categoría", object: "bottle", text: "Facial, corporal, capilar, masaje, solar, after sun e higiene.", tone: "ivory" },
-  { id: "06", title: "Alimentación y bebidas", tag: "Categoría", object: "jar", text: "Dulces, chocolates, repostería, bebidas e infusiones con revisión previa.", tone: "mahogany" },
+  { id: "06", title: "Alimentación y bebidas", tag: "Categoría", object: "jar", text: "Dulces, chocolates, repostería, bebidas e infusiones para disfrutar en cualquier momento.", tone: "mahogany" },
   { id: "07", title: "Ropa y regalos", tag: "Categoría", object: "case", text: "Ropa, complementos, regalos, souvenirs, velas e incienso.", tone: "gold" },
-  { id: "08", title: "Selección de tienda", tag: "Novedades", object: "device", text: "Consulta en el local las referencias disponibles y su documentación actual.", tone: "green" },
-  { id: "09", title: "Artículos para mascotas", tag: "Categoría", object: "bottle", text: "Referencia para animales pendiente de revisión y clasificación de fichas.", tone: "ivory" },
-];
-
-const inventory = [
-  { category: "Flores y resinas", subcategories: "Flores · Resinas y extractos · Preenrollados", stock: "Flores, joint/porro, Pollen, Afgano, Charas Gold, Crumble y Wax" },
-  { category: "Aceites", subcategories: "Por concentración · Línea animales (pendiente de revisión)", stock: "Aceites del 2,5% al 30% y referencia para animales" },
-  { category: "Semillas", subcategories: "Listado por variedad", stock: "Las nueve referencias de semillas visibles" },
-  { category: "Accesorios", subcategories: "Grinders · Pipas y bongs · Vaporizadores y baterías · Mecheros y complementos · Papeles, conos y filtros · Bandejas y ceniceros", stock: "Fumadores, papeles y tips, y parte de merchandising" },
-  { category: "Cosmética y cuidado", subcategories: "Facial · Corporal · Capilar · Masaje · Solar y after sun · Higiene", stock: "Cremas, sérum, bálsamos, aceites de masaje, champú y otros productos clasificados tras revisar sus fichas" },
-  { category: "Alimentación y bebidas", subcategories: "Dulces y chocolates · Repostería · Bebidas e infusiones", stock: "Alimentación y bebidas, con revisión previa de cada referencia" },
-  { category: "Ropa y regalos", subcategories: "Ropa y complementos · Regalos y souvenirs · Ambiente", stock: "Camisetas, calcetines, bañadores, gorras, llaveros, velas e incienso" },
-  { category: "Artículos para mascotas", subcategories: "Línea animales · Referencias pendientes de revisión", stock: "Productos para mascotas pendientes de clasificación y revisión de sus fichas" },
+  { id: "08", title: "Selección de tienda", tag: "Novedades", object: "device", text: "Descubre nuevas referencias y propuestas seleccionadas para la tienda.", tone: "green" },
+  { id: "09", title: "Artículos para mascotas", tag: "Categoría", object: "bottle", text: "Productos y accesorios para el cuidado diario de tus mascotas.", tone: "ivory" },
 ];
 
 const faqs = [
@@ -147,22 +136,18 @@ export default function Home() {
           <div id="categorias" className="mx-auto mt-14 grid max-w-[1240px] gap-px overflow-hidden bg-[#bba994] sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => <article data-reveal className={`category-card category-card-${category.tone}`} key={category.id}><div className="category-card-overlay" /><span className={`category-object category-object-${category.object}`} aria-hidden="true" /><div className="category-card-content"><span>{category.id}</span><strong className="category-sticker">{category.tag}</strong><h3 className="display-heading">{category.title}</h3><p>{category.text}</p><a href="#consulta" aria-label={`Consultar disponibilidad de ${category.title}`}>Consultar disponibilidad <ArrowUpRight size={16} /></a></div></article>)}
           </div>
-          <div className="inventory-panel mx-auto mt-16 max-w-[1240px]" aria-labelledby="inventory-heading">
-            <div className="inventory-panel-heading"><div><SectionLabel>Organización de stock</SectionLabel><h3 id="inventory-heading" className="display-heading">Qué se vende por categoría.</h3></div><p>Listado orientativo para ordenar la selección del establecimiento. Las referencias se muestran tras revisar su ficha y disponibilidad.</p></div>
-            <div className="inventory-table-wrap"><table className="inventory-table"><thead><tr><th scope="col">Categoría</th><th scope="col">Subcategorías</th><th scope="col">Listado de stock</th></tr></thead><tbody>{inventory.map((item) => <tr key={item.category}><th scope="row">{item.category}</th><td>{item.subcategories}</td><td>{item.stock}</td></tr>)}</tbody></table></div>
-          </div>
         </section>
 
         <section id="servicios" data-reveal className="relative overflow-hidden bg-[#2f1c18] px-5 py-20 text-[#f1e8da] lg:px-10 lg:py-28" aria-labelledby="services-heading">
           <div className="service-ghost" aria-hidden="true">PASA</div>
           <div className="relative mx-auto grid max-w-[1240px] gap-14 lg:grid-cols-[0.78fr_1.22fr]">
-            <div><SectionLabel inverse>Catálogo en preparación</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Estamos preparando las fichas.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">El catálogo detallado está en preparación. Estamos reuniendo fotografías, formatos y descripciones de cada categoría antes de mostrarlas en la web.</p></div>
+            <div><SectionLabel inverse>Sobre nosotros</SectionLabel><h2 id="services-heading" className="display-heading mt-5 max-w-[465px] text-[clamp(3rem,5.3vw,5.95rem)] leading-[0.88] tracking-[-0.06em]">Tu tienda de CBD en Sevilla desde 2022.</h2><p className="mt-7 max-w-[450px] text-[1.02rem] leading-7 text-[#e7d6c7]">Desde 2022 te atendemos en el centro de Sevilla con una selección de productos de CBD, accesorios y artículos para el día a día. Estamos frente a la Catedral para ayudarte a encontrar lo que buscas en un ambiente cercano.</p></div>
             <div className="service-showcase">
-              <figure className="interior-store-photo"><img src={assets.interior} alt="Vitrinas y mural del interior de The Cannabis Shop" /><figcaption>Catálogo en preparación · tienda física</figcaption></figure>
+              <figure className="interior-store-photo"><img src={assets.interior} alt="Vitrinas y mural del interior de The Cannabis Shop" /><figcaption>Desde 2022 · tienda física en Sevilla</figcaption></figure>
               <div className="service-grid">
-                <article><Search size={23} strokeWidth={1.65} /><span>01</span><h3 className="display-heading">Categorías definidas</h3><p>Estamos organizando cada familia de producto para mostrarla con claridad en el catálogo.</p></article>
-                <article><PackageOpen size={23} strokeWidth={1.65} /><span>02</span><h3 className="display-heading">Fichas en revisión</h3><p>Las referencias, formatos y fotografías se incorporarán cuando estén confirmados.</p></article>
-                <article><Store size={23} strokeWidth={1.65} /><span>03</span><h3 className="display-heading">Próximamente</h3><p>El catálogo completo estará disponible en esta sección cuando terminemos de documentar la selección.</p></article>
+                <article><Search size={23} strokeWidth={1.65} /><span>01</span><h3 className="display-heading">Selección cuidada</h3><p>Reunimos categorías y referencias pensadas para descubrir nuevas opciones en tienda.</p></article>
+                <article><PackageOpen size={23} strokeWidth={1.65} /><span>02</span><h3 className="display-heading">Atención cercana</h3><p>Te escuchamos y te ayudamos a recorrer la selección con una atención clara y personal.</p></article>
+                <article><Store size={23} strokeWidth={1.65} /><span>03</span><h3 className="display-heading">En el centro de Sevilla</h3><p>Visítanos en Avenida Constitución 30, frente a la Catedral, y conoce la tienda.</p></article>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 /** Diseño: ficha legal de lectura clara, con la identidad de caoba, oro y marfil de The Cannabis Shop. */
-import { ArrowLeft, ExternalLink, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "wouter";
 
 const logoUrl = "/assets/logo-the-cannabis-shop-hemp-brothers-sevilla.png";
@@ -86,7 +86,6 @@ export default function Privacy() {
               <section>
                 <h2 className="display-heading">6. Cookies y cambios</h2>
                 <p>Puedes revisar la información de cookies y cambiar tu elección de medición desde la <Link className="legal-inline-link" href="/cookies">Política de Cookies</Link>. Esta política podrá actualizarse cuando cambien los tratamientos, herramientas o requisitos aplicables.</p>
-                <div className="legal-note"><ShieldCheck size={18} /><p><strong>Dato pendiente antes de publicar.</strong> Añade un correo electrónico de privacidad si deseas ofrecer un canal adicional al domicilio postal para el ejercicio de derechos.</p></div>
               </section>
             </div>
           </div>
